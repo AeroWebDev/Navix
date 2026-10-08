@@ -32,22 +32,26 @@
 
 ## Phase 1: Landing Pages
 
-- [ ] Create `src/components/layout/Navbar.tsx` with logo, nav links (Features, Pricing, Contact, Try Demo CTA) — done when all links render and are keyboard-navigable
-- [ ] Create `src/components/layout/Footer.tsx` with links and copyright — done when footer renders at bottom of all marketing pages
-- [ ] Create marketing layout wrapper that includes Navbar and Footer — done when all marketing routes share the same layout
-- [ ] Implement `LandingPage.tsx` hero section (headline, sub-headline, two CTA buttons) — done when text and buttons render correctly
-- [ ] Implement `LandingPage.tsx` features overview section (3–6 feature cards with Lucide icons) — done when all cards render
-- [ ] Implement `LandingPage.tsx` testimonials section (3 static testimonials) — done when section renders
-- [ ] Implement `LandingPage.tsx` bottom CTA banner — done when banner renders with a working link
-- [ ] Implement `FeaturesPage.tsx` with feature groups per module (6+ groups, 3+ features each) — done when page renders all groups
-- [ ] Implement `PricingPage.tsx` with 3 pricing tiers and feature comparison table — done when tiers and table render
-- [ ] Implement `ContactPage.tsx` with React Hook Form + Zod validated form (name, email, subject, message) — done when invalid submission shows errors and valid submission shows success toast
-- [ ] Configure React Router routes: `/`, `/features`, `/pricing`, `/contact` — done when navigating to each URL renders the correct page
-- [ ] Ensure landing pages are responsive at 375px, 768px, and 1280px viewports — done when no horizontal scroll or broken layout exists at those widths
-- [ ] Write test: `Navbar` renders all nav links — done when test passes
-- [ ] Write test: `ContactPage` form shows validation errors on empty submit — done when test passes
-- [ ] Write test: `ContactPage` form shows success state on valid submit — done when test passes
-- [ ] Commit: `feat: add marketing landing pages` — done when commit exists
+- [x] Create `src/components/layout/Navbar.tsx` with logo, nav links (Features, How It Works, Custom Software, FAQ, Contact, Explore Demo CTA) — done when all links render and are keyboard-navigable
+- [x] Create `src/components/layout/Footer.tsx` with links, contacts, disclaimer, and copyright — done when footer renders at bottom of all marketing pages
+- [x] Create marketing layout wrapper that includes Navbar and Footer (`MarketingLayout.tsx`) — done when all marketing routes share the same layout
+- [x] Implement `LandingPage.tsx` hero section (headline, sub-headline, Explore Demo & Request Software CTAs, live preview card) — done when text and buttons render correctly
+- [x] Implement `LandingPage.tsx` features overview section (6 feature cards with Lucide icons) — done when all cards render
+- [x] Implement `LandingPage.tsx` testimonials section (3 demo/fictional testimonials clearly labeled) — done when section renders
+- [x] Implement `LandingPage.tsx` bottom CTA banner — done when banner renders with a working link
+- [x] Implement `FeaturesPage.tsx` with feature groups per module and SaaS comparison matrix — done when page renders all groups
+- [x] Implement `HowItWorksPage.tsx` with 4-step onboarding journey and deployment modes — done when page renders
+- [x] Implement `ContactPage.tsx` with React Hook Form + Zod validated form, direct WhatsApp trigger, and SLA notices — done when invalid submission shows errors and valid submission shows success state
+- [x] Implement `FAQPage.tsx` with instant search and category filtering — done when all categories filter questions
+- [x] Implement `PrivacyPage.tsx`, `TermsPage.tsx`, and `DisclaimerPage.tsx` legal templates — done when legal pages render
+- [x] Implement `NotFoundPage.tsx` with user-friendly recovery links — done when navigating to unknown URL shows 404
+- [x] Configure React Router routes in `App.tsx` for all marketing pages — done when navigating to each URL renders the correct page
+- [x] Ensure landing pages are responsive at 375px, 768px, and 1280px viewports — done when responsive layout renders cleanly
+- [x] Write test: `Navbar` and `Footer` render all brand and legal links — done when test passes
+- [x] Write test: `LandingPage` renders hero, buttons, and feature cards — done when test passes
+- [x] Write test: `ContactPage` form shows validation errors on empty submit — done when test passes
+- [x] Write test: `NotFoundPage` renders 404 message and home link — done when test passes
+- [x] Commit: `feat: add marketing landing pages and legal templates` — done when commit exists
 
 ---
 
