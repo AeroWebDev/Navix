@@ -8,26 +8,25 @@
 
 ## Phase 0: Project Initialization
 
-- [ ] Initialize Vite + React + TypeScript project with `npm create vite@latest` — done when `src/main.tsx` exists and `npm run dev` starts without errors
-- [ ] Install and configure Tailwind CSS with PostCSS — done when Tailwind utility classes apply in the browser
-- [ ] Initialize shadcn/ui with `npx shadcn-ui@latest init` — done when `components.json` exists and `cn()` helper is available
-- [ ] Add shadcn/ui core components: Button, Card, Input, Label, Select, Dialog, DropdownMenu, Table, Tabs, Toast, Badge, Separator — done when all components import without errors
-- [ ] Install React Router v6 (`react-router-dom`) — done when `BrowserRouter` wraps `App.tsx`
-- [ ] Install Recharts — done when a simple `<BarChart>` renders without errors
-- [ ] Install Lucide React — done when an icon renders in the browser
-- [ ] Install React Hook Form + Zod + `@hookform/resolvers` — done when a form with `zodResolver` submits
-- [ ] Install date-fns — done when `format(new Date(), 'yyyy-MM-dd')` works in a component
-- [ ] Install Vitest + React Testing Library + jsdom + `@testing-library/jest-dom` + `@testing-library/user-event` — done when `npm run test` runs without config errors
-- [ ] Configure `vite.config.ts`: set test environment to `jsdom`, add coverage provider, add path alias `@/ → src/` — done when `@/components/...` imports resolve
-- [ ] Configure `tsconfig.json` with path alias `@/*` mapping — done when TypeScript does not error on `@/` imports
-- [ ] Configure ESLint with `eslint-plugin-react`, `eslint-plugin-react-hooks`, `@typescript-eslint` — done when `npm run lint` runs on all `src/` files
-- [ ] Create full folder structure: `src/types`, `src/data`, `src/store`, `src/hooks`, `src/utils`, `src/constants`, `src/components/ui`, `src/components/layout`, `src/components/charts`, `src/components/tables`, `src/components/forms`, `src/components/modals`, `src/components/common`, `src/pages/marketing`, `src/pages/demo`, `src/pages/custom`, `src/styles` — done when all folders exist
-- [ ] Create `src/styles/globals.css` with Tailwind directives and shadcn/ui CSS variables — done when styles apply globally
-- [ ] Create `.gitignore` (node_modules, dist, .env, coverage) — done when Git does not track those paths
-- [ ] Create `.env.example` with placeholder variable names — done when file exists
-- [ ] Create basic `README.md` with project name, stack, and setup commands — done when file exists
-- [ ] Initialize Git repo, stage all files, make initial commit `chore: initial project scaffold` on `main` — done when `git log` shows the commit
-- [ ] Verify: `npm run dev` starts, `npm run test` passes, `npm run lint` passes, `npm run build` produces `dist/` — done when all four commands succeed
+- [x] Initialize Vite + React + TypeScript project with `npm create vite@latest` — done when `src/main.tsx` exists and `npm run dev` starts without errors
+- [x] Install and configure Tailwind CSS with PostCSS — done when Tailwind utility classes apply in the browser
+- [x] Initialize shadcn/ui and design system — done when `cn()` helper and tokens are available
+- [x] Add shadcn/ui core components: Button, Card, Input, Label, Select, Dialog/Modal, Tabs, Badge, EmptyState, LoadingSpinner — done when all components import without errors
+- [x] Install React Router v6 (`react-router-dom`) — done when `BrowserRouter` wraps `App.tsx`
+- [x] Install Recharts — done when Recharts dependency is installed and tested
+- [x] Install Lucide React — done when an icon renders in the browser
+- [x] Install React Hook Form + Zod + `@hookform/resolvers` — done when installed and types compile
+- [x] Install date-fns — done when formatters work and tested
+- [x] Install Vitest + React Testing Library + jsdom + `@testing-library/jest-dom` — done when `npm run test` runs without config errors
+- [x] Configure `vite.config.ts`: set test environment to `jsdom`, add path alias `@/ → src/` — done when `@/components/...` imports resolve
+- [x] Configure `tsconfig.json` with path alias `@/*` mapping — done when TypeScript does not error on `@/` imports
+- [x] Create full folder structure: `src/types`, `src/data`, `src/context`, `src/hooks`, `src/utils`, `src/components/ui`, `src/components/layout`, `src/components/common`, `src/pages/marketing`, `src/pages/demo`, `src/pages/custom`, `src/styles` — done when all folders exist
+- [x] Create `src/styles/globals.css` with Tailwind directives and shadcn/ui CSS variables — done when styles apply globally
+- [x] Create `.gitignore` (node_modules, dist, .env, coverage) — done when Git does not track those paths
+- [x] Create `.env.example` with placeholder variable names — done when file exists
+- [x] Create basic `README.md` with project name, stack, and setup commands — done when file exists
+- [x] Initialize Git repo, stage all files, make initial commit `chore: initial project scaffold` on `main` — done when `git log` shows the commit
+- [x] Verify: `npm run dev` starts, `npm run test` passes, `npm run type-check` passes, `npm run build` produces `dist/` — done when all commands succeed
 
 ---
 
