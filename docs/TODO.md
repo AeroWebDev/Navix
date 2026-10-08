@@ -57,21 +57,21 @@
 
 ## Phase 2: Demo App Shell & Role-Based Access Control (RBAC)
 
-- [ ] Create `src/context/AuthContext.tsx` with in-memory session, current user state, role permissions, login/logout functions — done when roles (Owner, Manager, Accountant, Cashier) are handled purely in memory
-- [ ] Create `src/pages/demo/DemoLoginPage.tsx` with role quick-pick accounts, password verification, error handling — done when valid credentials authenticate and invalid trigger error feedback
-- [ ] Create `src/components/auth/ProtectedRoute.tsx` and role-based route guard — done when unauthorized roles are redirected or shown permission notice
-- [ ] Create `src/components/layout/AppShell.tsx` with demo banner highlighting ephemeral in-memory preview (no persistent data saved) — done when banner renders and resets state on demand
-- [ ] Create `src/components/layout/Sidebar.tsx` with grouped nav links filtered dynamically by active role permissions — done when links render only for authorized roles
-- [ ] Implement Sidebar active link highlighting using `NavLink` from React Router — done when current route's link is visually highlighted
-- [ ] Implement Sidebar mobile toggle (hamburger button closes/opens sidebar) — done when sidebar slides in/out on mobile
-- [ ] Create `src/components/layout/TopBar.tsx` with active role badge, user switcher dropdown, demo reset button, and logout action — done when all elements render and function
-- [ ] Create `src/pages/NotFoundPage.tsx` with a 404 message and link back to `/` — done when navigating to an unknown URL shows the 404 page
-- [ ] Configure `/demo/*` nested routes in `App.tsx` using `AppShell` as layout and route guards — done when all `/demo/` paths render inside AppShell
-- [ ] Add redirect from `/demo` to `/demo/login` (if unauthenticated) or `/demo/dashboard` — done when visiting `/demo` performs correct redirection
-- [ ] Write test: `DemoLoginPage` authenticates valid credentials and rejects incorrect password — done when test passes
-- [ ] Write test: `Sidebar` hides restricted routes for Cashier role — done when test passes
-- [ ] Write test: navigating to unknown route renders `NotFoundPage` — done when test passes
-- [ ] Commit: `feat: add demo app shell with role auth and RBAC navigation` — done when commit exists
+- [x] Create `src/context/AuthContext.tsx` with in-memory session, current user state, role permissions, login/logout functions — done when roles (Owner, Manager, Accountant, Cashier) are handled purely in memory
+- [x] Create `src/pages/demo/DemoLoginPage.tsx` with role quick-pick accounts, password verification, error handling — done when valid credentials authenticate and invalid trigger error feedback
+- [x] Create `src/components/auth/ProtectedRoute.tsx` and role-based route guard — done when unauthorized roles are redirected or shown permission notice
+- [x] Create `src/components/layout/AppShell.tsx` with demo banner highlighting ephemeral in-memory preview (no persistent data saved) — done when banner renders and resets state on demand
+- [x] Create `src/components/layout/Sidebar.tsx` with grouped nav links filtered dynamically by active role permissions — done when links render only for authorized roles
+- [x] Implement Sidebar active link highlighting using `NavLink` from React Router — done when current route's link is visually highlighted
+- [x] Implement Sidebar mobile toggle (hamburger button closes/opens sidebar) — done when sidebar slides in/out on mobile
+- [x] Create `src/components/layout/TopBar.tsx` with active role badge, user switcher dropdown, demo reset button, and logout action — done when all elements render and function
+- [x] Create `src/pages/marketing/NotFoundPage.tsx` with a 404 message and link back to `/` — done when navigating to an unknown URL shows the 404 page
+- [x] Configure `/demo/*` nested routes in `App.tsx` using `AppShell` as layout and route guards — done when all `/demo/` paths render inside AppShell
+- [x] Add redirect from `/demo` to `/demo/login` (if unauthenticated) or `/demo/dashboard` — done when visiting `/demo` performs correct redirection
+- [x] Write test: `DemoLoginPage` authenticates valid credentials and rejects incorrect password — done when test passes
+- [x] Write test: `Sidebar` hides restricted routes for Cashier role — done when test passes
+- [x] Write test: navigating to unknown route renders `NotFoundPage` — done when test passes
+- [x] Commit: `feat: add demo app shell with role auth and RBAC navigation` — done when commit exists
 
 ---
 
