@@ -27,10 +27,11 @@ export const Navbar: React.FC = () => {
             <ShieldCheck className="h-5 w-5" />
           </div>
           <div className="flex flex-col">
-            <span className="text-lg font-bold tracking-tight text-foreground flex items-center gap-1.5">
+            <span className="text-lg font-bold tracking-tight text-foreground flex items-center gap-2">
               Apex Ledger
-              <span className="hidden sm:inline-block text-[10px] uppercase font-semibold px-1.5 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">
-                PROTOTYPE
+              <span className="hidden sm:inline-flex items-center gap-1.5 text-[11px] font-medium text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                Live Demo
               </span>
             </span>
           </div>

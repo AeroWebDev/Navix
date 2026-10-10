@@ -150,7 +150,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       <aside
         className={cn(
           'fixed inset-y-0 left-0 z-50 flex flex-col border-r border-border bg-card transition-all duration-300 select-none lg:static',
-          isCollapsed ? 'w-18' : 'w-64',
+          isCollapsed ? 'w-20' : 'w-64',
           mobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         )}
       >

@@ -6,6 +6,7 @@ import { Footer } from '../components/layout/Footer';
 import { LandingPage } from '../pages/marketing/LandingPage';
 import { ContactPage } from '../pages/marketing/ContactPage';
 import { NotFoundPage } from '../pages/marketing/NotFoundPage';
+import { CustomSoftwarePage } from '../pages/custom/CustomSoftwarePage';
 
 describe('Phase 1: Marketing Components & Pages', () => {
   it('LP-001 / NAV-010: Navbar renders brand and primary navigation links', () => {
@@ -79,5 +80,39 @@ describe('Phase 1: Marketing Components & Pages', () => {
     expect(screen.getByText(/Error 404/i)).toBeInTheDocument();
     expect(screen.getByText(/Page Not Found/i)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /back to homepage/i })).toBeInTheDocument();
+  });
+
+  it('CUST-001: CustomSoftwarePage renders headline, form fields, and presets', () => {
+    render(
+      <BrowserRouter>
+        <CustomSoftwarePage />
+      </BrowserRouter>
+    );
+
+    expect(
+      screen.getByText(/Need an Accounting System Built for Your Business\?/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /request my software/i })
+    ).toBeInTheDocument();
+    expect(screen.getByText(/Retail Store \/ Supermarket/i)).toBeInTheDocument();
+    expect(screen.getByText(/Business Information/i)).toBeInTheDocument();
+  });
+
+  it('CUST-002: CustomSoftwarePage validates required fields on empty submit', async () => {
+    render(
+      <BrowserRouter>
+        <CustomSoftwarePage />
+      </BrowserRouter>
+    );
+
+    const submitBtn = screen.getByRole('button', { name: /request my software/i });
+    fireEvent.click(submitBtn);
+
+    await waitFor(() => {
+      expect(screen.getByText(/full name must be at least 2 characters/i)).toBeInTheDocument();
+      expect(screen.getByText(/business name must be at least 2 characters/i)).toBeInTheDocument();
+      expect(screen.getByText(/please enter a valid business email/i)).toBeInTheDocument();
+    });
   });
 });

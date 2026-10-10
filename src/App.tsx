@@ -15,6 +15,7 @@ import { PrivacyPage } from '@/pages/marketing/PrivacyPage';
 import { TermsPage } from '@/pages/marketing/TermsPage';
 import { DisclaimerPage } from '@/pages/marketing/DisclaimerPage';
 import { NotFoundPage } from '@/pages/marketing/NotFoundPage';
+import { CustomSoftwarePage } from '@/pages/custom/CustomSoftwarePage';
 
 // Demo Pages
 import { DemoLoginPage } from '@/pages/demo/DemoLoginPage';
@@ -30,6 +31,8 @@ export const App: React.FC = () => {
             <Route path="/" element={<LandingPage />} />
             <Route path="/features" element={<FeaturesPage />} />
             <Route path="/how-it-works" element={<HowItWorksPage />} />
+            <Route path="/custom-software" element={<CustomSoftwarePage />} />
+            <Route path="/custom" element={<Navigate to="/custom-software" replace />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
