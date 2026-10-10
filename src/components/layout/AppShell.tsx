@@ -3,6 +3,7 @@ import { Outlet, Link } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { TopBar } from './TopBar';
 import { Sparkles, RotateCcw, ArrowRight } from 'lucide-react';
+import { useDemoData } from '@/context/DemoDataContext';
 
 interface AppShellProps {
   onResetDemoData?: () => void;
@@ -11,6 +12,9 @@ interface AppShellProps {
 export const AppShell: React.FC<AppShellProps> = ({ onResetDemoData }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { resetAllData } = useDemoData();
+
+  const handleReset = onResetDemoData || resetAllData;
 
   return (
     <div className="flex h-screen overflow-hidden bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary">
@@ -33,15 +37,13 @@ export const AppShell: React.FC<AppShellProps> = ({ onResetDemoData }) => {
             </span>
           </div>
           <div className="flex items-center gap-2">
-            {onResetDemoData && (
-              <button
-                onClick={onResetDemoData}
-                className="hover:underline font-bold flex items-center gap-1 cursor-pointer"
-              >
-                <RotateCcw className="h-3 w-3" />
-                Reset Baseline
-              </button>
-            )}
+            <button
+              onClick={handleReset}
+              className="hover:underline font-bold flex items-center gap-1 cursor-pointer"
+            >
+              <RotateCcw className="h-3 w-3" />
+              Reset Baseline
+            </button>
             <span>•</span>
             <Link to="/custom-software" className="hover:underline font-bold flex items-center gap-1 text-primary">
               Request Customized Build <ArrowRight className="h-3 w-3" />
@@ -52,7 +54,7 @@ export const AppShell: React.FC<AppShellProps> = ({ onResetDemoData }) => {
         {/* Top Header Bar */}
         <TopBar
           onOpenMobileSidebar={() => setMobileOpen(true)}
-          onResetDemoData={onResetDemoData}
+          onResetDemoData={handleReset}
         />
 
         {/* Scrollable Viewport Content */}

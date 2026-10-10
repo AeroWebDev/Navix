@@ -19,7 +19,9 @@ import { CustomSoftwarePage } from '@/pages/custom/CustomSoftwarePage';
 
 // Demo Pages
 import { DemoLoginPage } from '@/pages/demo/DemoLoginPage';
+import { DashboardPage } from '@/pages/demo/DashboardPage';
 import { DemoModulePlaceholder } from '@/pages/demo/DemoModulePlaceholder';
+import { DemoDataProvider } from '@/context/DemoDataContext';
 
 export const App: React.FC = () => {
   return (
@@ -49,7 +51,9 @@ export const App: React.FC = () => {
           <Route
             element={
               <ProtectedRoute>
-                <AppShell />
+                <DemoDataProvider>
+                  <AppShell />
+                </DemoDataProvider>
               </ProtectedRoute>
             }
           >
@@ -57,17 +61,7 @@ export const App: React.FC = () => {
               path="/demo/dashboard"
               element={
                 <ProtectedRoute requiredPermission="dashboard">
-                  <DemoModulePlaceholder
-                    title="Executive Dashboard"
-                    moduleKey="Analytics & KPIs"
-                    description="Real-time revenue metrics, profit margin ratios, and recent activities."
-                    features={[
-                      'Revenue, Expenses, and Net Profit KPI tracking',
-                      'Monthly financial trend charts',
-                      'Recent transactions and invoice summaries',
-                      'Automated low stock alerts',
-                    ]}
-                  />
+                  <DashboardPage />
                 </ProtectedRoute>
               }
             />

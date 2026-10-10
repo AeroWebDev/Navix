@@ -77,47 +77,47 @@
 
 ## Phase 3: Dashboard
 
-- [ ] Create `src/data/mockSales.ts` with 40 realistic sale records — done when file exports an array of `Sale[]`
-- [ ] Create `src/data/mockPurchases.ts` with 30 realistic purchase records — done when file exports `Purchase[]`
-- [ ] Create `src/data/mockProducts.ts` with 25 realistic product records — done when file exports `Product[]`
-- [ ] Create `src/data/mockCustomers.ts` with 20 realistic customer records — done when file exports `Customer[]`
-- [ ] Create `src/data/mockSuppliers.ts` with 15 realistic supplier records — done when file exports `Supplier[]`
-- [ ] Create `src/data/mockExpenses.ts` with 35 realistic expense records — done when file exports `Expense[]`
-- [ ] Create `src/data/mockInvoices.ts` with 20 realistic invoice records — done when file exports `Invoice[]`
-- [ ] Create `src/data/mockPayments.ts` with 25 realistic payment records — done when file exports `Payment[]`
-- [ ] Create `src/data/mockEmployees.ts` with 15 realistic employee records — done when file exports `Employee[]`
-- [ ] Define all TypeScript interfaces in `src/types/` (one file per entity + `index.ts` re-export) — done when all types import without errors from `@/types`
-- [ ] Create `SalesContext.tsx` with `useReducer` (ADD, UPDATE, DELETE, SET actions), seeded from mockSales — done when context provides sales array and dispatch
-- [ ] Create `PurchasesContext.tsx` — done when context provides purchases array and dispatch
-- [ ] Create `ProductsContext.tsx` — done when context provides products array and dispatch
-- [ ] Create `CustomersContext.tsx` — done when context provides customers array and dispatch
-- [ ] Create `SuppliersContext.tsx` — done when context provides suppliers array and dispatch
-- [ ] Create `ExpensesContext.tsx` — done when context provides expenses array and dispatch
-- [ ] Create `InvoicesContext.tsx` — done when context provides invoices array and dispatch
-- [ ] Create `PaymentsContext.tsx` — done when context provides payments array and dispatch
-- [ ] Create `EmployeesContext.tsx` — done when context provides employees array and dispatch
-- [ ] Create `AppProvider.tsx` composing all 9 contexts — done when a single `<AppProvider>` wrap provides all data
-- [ ] Wrap `/demo/*` routes in `AppProvider` — done when dashboard can access all context data
-- [ ] Create `useLocalStorage` hook — done when state persists across page refreshes
-- [ ] Create thin custom hooks: `useSales`, `useProducts`, `useCustomers`, `useSuppliers`, `usePurchases`, `useExpenses`, `useInvoices`, `usePayments`, `useEmployees` — done when each hook returns entity array + CRUD operations
-- [ ] Create `src/utils/currency.ts` with `formatCurrency(amount, currency?)` — done when function returns `"$1,234.56"` format
-- [ ] Create `src/utils/dates.ts` with `formatDate(isoString, pattern?)` — done when function returns formatted date string
-- [ ] Create `src/utils/calculations.ts` with `calculateSubtotal`, `calculateTax`, `calculateTotal`, `calculateProfit` — done when unit tests pass for these functions
-- [ ] Create `src/utils/idGenerator.ts` with `generateId()` using `crypto.randomUUID()` — done when it returns a valid UUID string
-- [ ] Create `src/components/common/StatCard.tsx` (label, value, icon, optional trend) — done when it renders all props correctly
-- [ ] Create `src/components/charts/RevenueChart.tsx` (bar chart, monthly revenue vs expenses) — done when chart renders with axes and legend
-- [ ] Create `src/components/charts/ExpensePieChart.tsx` (pie chart by expense category) — done when chart renders with legend
-- [ ] Implement `DashboardPage.tsx` KPI stat cards row (Total Revenue, Total Expenses, Net Profit, Outstanding Invoices) — done when correct totals display
-- [ ] Implement `DashboardPage.tsx` monthly revenue vs expenses bar chart — done when 12 monthly bars render
-- [ ] Implement `DashboardPage.tsx` expense breakdown pie chart — done when pie segments reflect expense categories
-- [ ] Implement `DashboardPage.tsx` Recent Sales mini-table (last 5) — done when 5 rows render with correct data
-- [ ] Implement `DashboardPage.tsx` Recent Invoices mini-table (last 5) — done when 5 rows render with correct data
-- [ ] Implement `DashboardPage.tsx` Low Stock Alerts list — done when products at or below reorder level appear
-- [ ] Write test: `DashboardPage` stat card shows correct total revenue — done when test passes
-- [ ] Write test: `StatCard` renders label and formatted value — done when test passes
-- [ ] Write test: `formatCurrency` returns correctly formatted string — done when test passes
-- [ ] Write test: `calculateProfit` returns revenue minus expenses — done when test passes
-- [ ] Commit: `feat: add dashboard with charts and KPI cards` — done when commit exists
+- [x] Create `src/data/mockSales.ts` with 40 realistic sale records — done when file exports an array of `Sale[]`
+- [x] Create `src/data/mockPurchases.ts` with 30 realistic purchase records — done when file exports `Purchase[]`
+- [x] Create `src/data/mockProducts.ts` with 25 realistic product records — done when file exports `Product[]`
+- [x] Create `src/data/mockCustomers.ts` with 20 realistic customer records — done when file exports `Customer[]`
+- [x] Create `src/data/mockSuppliers.ts` with 15 realistic supplier records — done when file exports `Supplier[]`
+- [x] Create `src/data/mockExpenses.ts` with 35 realistic expense records — done when file exports `Expense[]`
+- [x] Create `src/data/mockInvoices.ts` with 20 realistic invoice records — done when file exports `Invoice[]`
+- [x] Create `src/data/mockPayments.ts` with 25 realistic payment records — done when file exports `Payment[]`
+- [x] Create `src/data/mockEmployees.ts` with 15 realistic employee records — done when file exports `Employee[]`
+- [x] Define all TypeScript interfaces in `src/types/` (one file per entity + `index.ts` re-export) — done when all types import without errors from `@/types`
+- [x] Create `SalesContext.tsx` / `DemoDataContext.tsx` with in-memory CRUD actions seeded from mockSales — done when context provides sales array and CRUD methods
+- [x] Create `PurchasesContext` / `DemoDataContext` — done when context provides purchases array and CRUD methods
+- [x] Create `ProductsContext` / `DemoDataContext` — done when context provides products array and CRUD methods
+- [x] Create `CustomersContext` / `DemoDataContext` — done when context provides customers array and CRUD methods
+- [x] Create `SuppliersContext` / `DemoDataContext` — done when context provides suppliers array and CRUD methods
+- [x] Create `ExpensesContext` / `DemoDataContext` — done when context provides expenses array and CRUD methods
+- [x] Create `InvoicesContext` / `DemoDataContext` — done when context provides invoices array and CRUD methods
+- [x] Create `PaymentsContext` / `DemoDataContext` — done when context provides payments array and CRUD methods
+- [x] Create `EmployeesContext` / `DemoDataContext` — done when context provides employees array and CRUD methods
+- [x] Create `DemoDataProvider` composing all 9 in-memory state models and reset baseline — done when a single `<DemoDataProvider>` wrap provides all data
+- [x] Wrap `/demo/*` routes in `DemoDataProvider` — done when dashboard can access all context data
+- [x] State architecture: 100% in-memory React state (no localStorage persistence per strict user directive REQ-07) — done when state resets on reload and via Reset button
+- [x] Create thin custom hooks: `useSales`, `useProducts`, `useCustomers`, `useSuppliers`, `usePurchases`, `useExpenses`, `useInvoices`, `usePayments`, `useEmployees` — done when each hook returns entity array + CRUD operations
+- [x] Create `src/utils/currency.ts` with `formatCurrency(amount, currency?)` — done when function returns `"$1,234.56"` format
+- [x] Create `src/utils/dates.ts` with `formatDate(isoString, pattern?)` — done when function returns formatted date string
+- [x] Create `src/utils/calculations.ts` with `calculateSubtotal`, `calculateTax`, `calculateTotal`, `calculateProfit` — done when unit tests pass for these functions
+- [x] Create `src/utils/idGenerator.ts` with `generateId()` using `crypto.randomUUID()` — done when it returns a valid UUID string
+- [x] Create `src/components/common/StatCard.tsx` (label, value, icon, optional trend) — done when it renders all props correctly
+- [x] Create `src/components/charts/RevenueChart.tsx` (bar chart, monthly revenue vs expenses) — done when chart renders with axes and legend
+- [x] Create `src/components/charts/ExpensePieChart.tsx` (pie chart by expense category) — done when chart renders with legend
+- [x] Implement `DashboardPage.tsx` KPI stat cards row (Total Revenue, Total Expenses, Net Profit, Outstanding Invoices) — done when correct totals display
+- [x] Implement `DashboardPage.tsx` monthly revenue vs expenses bar chart — done when 12 monthly bars render
+- [x] Implement `DashboardPage.tsx` expense breakdown pie chart — done when pie segments reflect expense categories
+- [x] Implement `DashboardPage.tsx` Recent Sales mini-table (last 5) — done when 5 rows render with correct data
+- [x] Implement `DashboardPage.tsx` Recent Invoices mini-table (last 5) — done when 5 rows render with correct data
+- [x] Implement `DashboardPage.tsx` Low Stock Alerts list — done when products at or below reorder level appear
+- [x] Write test: `DashboardPage` stat card shows correct total revenue — done when test passes
+- [x] Write test: `StatCard` renders label and formatted value — done when test passes
+- [x] Write test: `formatCurrency` returns correctly formatted string — done when test passes
+- [x] Write test: `calculateProfit` returns revenue minus expenses — done when test passes
+- [x] Commit: `feat: add dashboard with charts and KPI cards` — done when commit exists
 
 ---
 

@@ -1,4 +1,4 @@
-export type Role = 'owner' | 'manager' | 'accountant' | 'cashier';
+export type Role = 'owner' | 'manager' | 'accountant' | 'cashier' | 'employee';
 
 export interface User {
   id: string;
@@ -86,6 +86,22 @@ export const ROLE_PERMISSIONS: Record<Role, Permission> = {
     expenses: false,
     invoices: true,
     payments: true,
+    employees: false,
+    reports: false,
+    accounting: false,
+    settings: false,
+  },
+  employee: {
+    dashboard: true,
+    sales: true,
+    purchases: false,
+    products: true,
+    inventory: true,
+    customers: true,
+    suppliers: false,
+    expenses: false,
+    invoices: false,
+    payments: false,
     employees: false,
     reports: false,
     accounting: false,
