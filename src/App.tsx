@@ -20,6 +20,9 @@ import { CustomSoftwarePage } from '@/pages/custom/CustomSoftwarePage';
 // Demo Pages
 import { DemoLoginPage } from '@/pages/demo/DemoLoginPage';
 import { DashboardPage } from '@/pages/demo/DashboardPage';
+import { SalesListPage } from '@/pages/demo/SalesListPage';
+import { NewSalePage } from '@/pages/demo/NewSalePage';
+import { SaleDetailPage } from '@/pages/demo/SaleDetailPage';
 import { DemoModulePlaceholder } from '@/pages/demo/DemoModulePlaceholder';
 import { DemoDataProvider } from '@/context/DemoDataContext';
 
@@ -70,17 +73,31 @@ export const App: React.FC = () => {
               path="/demo/sales"
               element={
                 <ProtectedRoute requiredPermission="sales">
-                  <DemoModulePlaceholder
-                    title="Sales & POS Operations"
-                    moduleKey="Sales Engine"
-                    description="Point of sale terminal, invoice generation, discount calculations, and payment tracking."
-                    features={[
-                      'Line-item item entry with unit price & tax calculation',
-                      'Flexible discounts (fixed & percentage)',
-                      'Multiple payment methods (Cash, Card, Transfer)',
-                      'Customer lookup and order history',
-                    ]}
-                  />
+                  <SalesListPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/sales/new"
+              element={
+                <ProtectedRoute requiredPermission="sales">
+                  <NewSalePage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/sales/:id"
+              element={
+                <ProtectedRoute requiredPermission="sales">
+                  <SaleDetailPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/sales/:id/edit"
+              element={
+                <ProtectedRoute requiredPermission="sales">
+                  <NewSalePage />
                 </ProtectedRoute>
               }
             />
