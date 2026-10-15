@@ -4,65 +4,67 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    /* NAVIX Official Light Mode System */
+    --background: 39 44% 94%; /* Warm Ivory #F6F1E8 */
+    --foreground: 200 19% 18%; /* Charcoal #263238 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card: 0 0% 100%; /* Clean Elevated Surface */
+    --card-foreground: 200 19% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 200 19% 18%;
 
-    --primary: 158 64% 42%;
+    --primary: 208 43% 16%; /* Deep Navy #172A3A */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222 47% 11.2%;
+    --secondary: 120 3% 90%; /* Soft Gray #E5E7E5 */
+    --secondary-foreground: 200 19% 18%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 40 18% 90%;
+    --muted-foreground: 200 12% 44%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222 47% 11.2%;
+    --accent: 163 50% 36%; /* Emerald #2E8B70 */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 52% 50%; /* Burgundy/Loss #B54848 */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 158 64% 42%;
+    --border: 120 5% 88%;
+    --input: 120 5% 88%;
+    --ring: 163 50% 36%; /* Emerald Ring */
 
-    --radius: 0.5rem;
+    --radius: 1.25rem; /* Rounded 20px modern radius */
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
+    /* NAVIX Official Dark Mode System */
+    --background: 201 29% 9%; /* Deep Slate #111A1F */
+    --foreground: 84 14% 96%; /* Warm White #F1F3EE */
 
-    --card: 222 47% 13%;
-    --card-foreground: 210 40% 98%;
+    --card: 200 27% 15%; /* Slate Card #1C2A31 */
+    --card-foreground: 84 14% 96%;
 
-    --popover: 222 47% 13%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 200 27% 15%;
+    --popover-foreground: 84 14% 96%;
 
-    --primary: 158 64% 42%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 160 34% 50%; /* Soft Emerald #55A88C */
+    --primary-foreground: 201 29% 9%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 202 30% 12%; /* Dark Navy Slate #162229 */
+    --secondary-foreground: 84 14% 96%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 201 25% 18%;
+    --muted-foreground: 160 5% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 160 34% 50%; /* Soft Emerald #55A88C */
+    --accent-foreground: 201 29% 9%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 51% 62%; /* Loss #D06A6A */
+    --destructive-foreground: 84 14% 96%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 158 64% 42%;
+    --border: 202 24% 20%;
+    --input: 202 24% 20%;
+    --ring: 160 34% 50%;
   }
 }
 

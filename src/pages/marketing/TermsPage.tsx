@@ -42,14 +42,14 @@ export const TermsPage: React.FC = () => {
         <section className="space-y-2">
           <h2 className="text-lg font-bold text-foreground">3. Intellectual Property</h2>
           <p>
-            All brand trademarks, interface designs, codebase assets, and architectural patterns of Apex Ledger Solutions remain the intellectual property of Apex Ledger Solutions until customized licenses are formally conveyed per commercial contract.
+            All brand trademarks, interface designs, codebase assets, and architectural patterns of NAVIX Solutions remain the intellectual property of NAVIX Solutions until customized licenses are formally conveyed per commercial contract.
           </p>
         </section>
 
         <section className="space-y-2">
           <h2 className="text-lg font-bold text-foreground">4. Limitation of Liability</h2>
           <p>
-            The demonstration platform is provided "as is" without warranty of any kind. Under no circumstances shall Apex Ledger Solutions be liable for damages resulting from reliance on sample calculations or demonstration figures generated within the preview environment.
+            The demonstration platform is provided "as is" without warranty of any kind. Under no circumstances shall NAVIX Solutions be liable for damages resulting from reliance on sample calculations or demonstration figures generated within the preview environment.
           </p>
         </section>
       </div>

@@ -19,14 +19,14 @@ interface ExpensePieChartProps {
 }
 
 const COLORS = [
-  '#10b981', // emerald
-  '#3b82f6', // blue
-  '#8b5cf6', // purple
-  '#f59e0b', // amber
-  '#ef4444', // red
-  '#06b6d4', // cyan
-  '#ec4899', // pink
-  '#64748b', // slate
+  '#2E8B70', // NAVIX Emerald
+  '#172A3A', // NAVIX Deep Navy
+  '#B9683E', // NAVIX Expense Burnt Orange
+  '#397A78', // NAVIX Teal Info
+  '#C58A32', // NAVIX Amber
+  '#755A78', // NAVIX Plum Special
+  '#B54848', // NAVIX Burgundy
+  '#9AA3A0', // NAVIX Soft Gray
 ];
 
 export const ExpensePieChart: React.FC<ExpensePieChartProps> = ({ data, height = 320 }) => {

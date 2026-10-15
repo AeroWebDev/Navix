@@ -28,7 +28,7 @@ export const PrivacyPage: React.FC = () => {
         <section className="space-y-2">
           <h2 className="text-lg font-bold text-foreground">1. Interactive Preview Data Handling</h2>
           <p>
-            When utilizing the online interactive demonstration of Apex Ledger, all data transactions—including creating demo sales, editing sample products, adding mock expenses, and generating invoices—are processed purely in volatile browser memory.
+            When utilizing the online interactive demonstration of NAVIX, all data transactions—including creating demo sales, editing sample products, adding mock expenses, and generating invoices—are processed purely in volatile browser memory.
           </p>
           <p className="font-semibold text-foreground">
             Zero persistent data storage: No client-entered records are saved to persistent server databases, third-party analytics trackers, or local storage. Refreshing your web browser immediately purges all temporary demonstration state.
@@ -48,11 +48,11 @@ export const PrivacyPage: React.FC = () => {
         <section className="space-y-2">
           <h2 className="text-lg font-bold text-foreground">3. Enterprise & On-Premises Deployments</h2>
           <p>
-            For client organizations deploying customized builds of Apex Ledger:
+            For client organizations deploying customized builds of NAVIX:
           </p>
           <ul className="list-disc pl-5 space-y-1">
             <li>
-              <strong>On-Premises / Windows Desktop:</strong> Your database resides strictly within your local computer or private local network. Apex Ledger retains zero remote access to your commercial records.
+              <strong>On-Premises / Windows Desktop:</strong> Your database resides strictly within your local computer or private local network. NAVIX retains zero remote access to your commercial records.
             </li>
             <li>
               <strong>Private Cloud:</strong> Deployed inside your private cloud infrastructure (AWS, DigitalOcean, or private VPS) under your exclusive encryption keys and administrative custody.
@@ -64,8 +64,8 @@ export const PrivacyPage: React.FC = () => {
           <h2 className="text-lg font-bold text-foreground">4. Contacting Data Governance</h2>
           <p>
             If you have questions regarding data privacy, security architecture, or custom encryption compliance (e.g., GDPR, HIPAA, or regional data sovereignty), contact our engineering compliance officer at{' '}
-            <a href="mailto:privacy@apexledger.demo" className="text-primary hover:underline">
-              privacy@apexledger.demo
+            <a href="mailto:privacy@navix.demo" className="text-primary hover:underline">
+              privacy@navix.demo
             </a>.
           </p>
         </section>

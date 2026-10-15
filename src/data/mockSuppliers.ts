@@ -34,9 +34,9 @@ export const MOCK_SUPPLIERS: Supplier[] = [
   {
     id: 'sup-003',
     supplierNumber: 'SUP-003',
-    companyName: 'Apex Ledger Software Systems',
+    companyName: 'NAVIX Software Systems',
     contactPerson: 'Engineering Internal',
-    email: 'internal-licenses@apexledger.demo',
+    email: 'internal-licenses@navix.demo',
     phone: '+1 (555) 111-2233',
     address: '1 Financial Plaza, New York, NY',
     taxNumber: 'US-NY-1122334',
@@ -124,9 +124,9 @@ export const MOCK_SUPPLIERS: Supplier[] = [
   {
     id: 'sup-009',
     supplierNumber: 'SUP-009',
-    companyName: 'Apex Cloud Hosting & Infrastructure',
+    companyName: 'NAVIX Cloud Hosting & Infrastructure',
     contactPerson: 'DevOps Partner',
-    email: 'cloud-billing@apexcloud.io',
+    email: 'cloud-billing@navixcloud.io',
     phone: '+1 (555) 888-9900',
     address: '500 AWS Way, Seattle, WA',
     taxNumber: 'US-WA-9900112',

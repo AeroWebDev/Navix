@@ -146,31 +146,31 @@ export const Sidebar: React.FC<SidebarProps> = ({
         />
       )}
 
-      {/* Sidebar container */}
+      {/* Sidebar container - Curved Floating Island */}
       <aside
         className={cn(
-          'fixed inset-y-0 left-0 z-50 flex flex-col border-r border-border bg-card transition-all duration-300 select-none lg:static',
+          'fixed inset-y-0 left-0 z-50 flex flex-col bg-card transition-all duration-300 select-none lg:static lg:my-3 lg:ml-3 lg:rounded-[28px] lg:border lg:border-border/60 lg:shadow-soft-island overflow-hidden',
           isCollapsed ? 'w-20' : 'w-64',
           mobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         )}
       >
         {/* Brand Header */}
-        <div className="flex h-16 items-center justify-between px-4 border-b border-border">
+        <div className="flex h-16 items-center justify-between px-4 border-b border-border/60">
           <Link
             to="/demo/dashboard"
             onClick={onCloseMobile}
-            className={cn('flex items-center gap-2.5 overflow-hidden', isCollapsed && 'justify-center')}
+            className={cn('flex items-center gap-2.5 overflow-hidden group', isCollapsed && 'justify-center')}
           >
-            <div className="h-9 w-9 rounded-lg bg-primary flex items-center justify-center text-primary-foreground shadow-sm shrink-0">
+            <div className="h-10 w-10 rounded-2xl bg-accent flex items-center justify-center text-white shadow-sm shrink-0 group-hover:scale-105 transition-transform">
               <ShieldCheck className="h-5 w-5" />
             </div>
             {!isCollapsed && (
               <div className="flex flex-col">
-                <span className="text-sm font-bold tracking-tight text-foreground truncate">
-                  Apex Ledger
+                <span className="text-base font-extrabold tracking-tight text-foreground truncate">
+                  NAVIX
                 </span>
-                <span className="text-[10px] text-muted-foreground uppercase font-semibold">
-                  Demo Preview
+                <span className="text-[10px] text-muted-foreground uppercase font-bold tracking-wider">
+                  Live Preview
                 </span>
               </div>
             )}
@@ -180,23 +180,22 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <button
             onClick={onToggleCollapse}
             aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-            className="hidden lg:flex p-1.5 rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground transition-colors cursor-pointer"
+            className="hidden lg:flex p-1.5 rounded-full text-muted-foreground hover:bg-muted hover:text-foreground transition-colors cursor-pointer"
           >
             {isCollapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
           </button>
         </div>
 
         {/* Navigation list */}
-        <div className="flex-1 overflow-y-auto px-3 py-4 space-y-1">
+        <div className="flex-1 overflow-y-auto px-3 py-4 space-y-1.5">
           {navItems.map((item) => {
             const isAllowed = hasPermission(item.permissionKey);
 
             if (!isAllowed) {
-              // Hide or show disabled with lock for non-permitted routes
               return isCollapsed ? null : (
                 <div
                   key={item.path}
-                  className="flex items-center justify-between px-3 py-2 rounded-lg text-xs text-muted-foreground/40 cursor-not-allowed select-none"
+                  className="flex items-center justify-between px-3 py-2 rounded-2xl text-xs text-muted-foreground/40 cursor-not-allowed select-none"
                   title="Restricted by your active role"
                 >
                   <div className="flex items-center gap-2.5">
@@ -215,11 +214,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onClick={onCloseMobile}
                 className={({ isActive }) =>
                   cn(
-                    'flex items-center gap-3 px-3 py-2.5 rounded-lg text-xs font-medium transition-all group cursor-pointer',
+                    'flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-xs font-medium transition-all group cursor-pointer',
                     isActive
-                      ? 'bg-primary text-primary-foreground font-semibold shadow-sm'
-                      : 'text-muted-foreground hover:bg-muted hover:text-foreground',
-                    isCollapsed && 'justify-center px-0'
+                      ? 'bg-accent text-white font-semibold shadow-xs'
+                      : 'text-muted-foreground hover:bg-muted/70 hover:text-foreground',
+                    isCollapsed && 'justify-center px-0 rounded-2xl mx-1'
                   )
                 }
                 title={item.name}
@@ -232,11 +231,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
 
         {/* Bottom User & Role Indicator */}
-        <div className="p-3 border-t border-border bg-muted/20">
+        <div className="p-3 border-t border-border/60 bg-muted/20">
           {!isCollapsed ? (
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 overflow-hidden">
-                <div className="h-8 w-8 rounded-full bg-primary/20 text-primary font-bold text-xs flex items-center justify-center shrink-0">
+                <div className="h-9 w-9 rounded-full bg-accent/15 text-accent font-bold text-xs flex items-center justify-center shrink-0">
                   {user?.name.charAt(0) || 'U'}
                 </div>
                 <div className="truncate">
@@ -246,25 +245,25 @@ export const Sidebar: React.FC<SidebarProps> = ({
               </div>
               <Badge
                 variant={user?.role === 'owner' ? 'default' : user?.role === 'cashier' ? 'outline' : 'secondary'}
-                className="text-[9px] uppercase px-1.5 py-0"
+                className="text-[9px] uppercase px-2 py-0.5 rounded-full"
               >
                 {user?.role}
               </Badge>
             </div>
           ) : (
             <div className="flex justify-center" title={`${user?.name} (${user?.role})`}>
-              <div className="h-8 w-8 rounded-full bg-primary/20 text-primary font-bold text-xs flex items-center justify-center">
+              <div className="h-9 w-9 rounded-full bg-accent/15 text-accent font-bold text-xs flex items-center justify-center">
                 {user?.name.charAt(0) || 'U'}
               </div>
             </div>
           )}
 
           {!isCollapsed && (
-            <div className="mt-2 pt-2 border-t border-border/60 flex items-center justify-between text-[10px] text-muted-foreground">
-              <span className="flex items-center gap-1 text-emerald-600 font-medium">
-                <Sparkles className="h-3 w-3" /> In-Memory Mode
+            <div className="mt-2.5 pt-2 border-t border-border/40 flex items-center justify-between text-[10px] text-muted-foreground">
+              <span className="flex items-center gap-1 text-emerald-600 font-semibold">
+                <Sparkles className="h-3 w-3" /> In-Memory
               </span>
-              <Link to="/demo/login" className="hover:text-primary transition-colors">
+              <Link to="/demo/login" className="hover:text-primary font-semibold transition-colors">
                 Switch Role
               </Link>
             </div>

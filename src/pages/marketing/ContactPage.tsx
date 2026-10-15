@@ -78,7 +78,7 @@ export const ContactPage: React.FC = () => {
                 <div className="space-y-4">
                   {/* WhatsApp Quick Chat */}
                   <a
-                    href="https://wa.me/1234567890?text=Hello%20Apex%20Ledger%2C%20I%20am%20interested%20in%20a%20custom%20accounting%20system."
+                    href="https://wa.me/1234567890?text=Hello%20NAVIX%2C%20I%20am%20interested%20in%20a%20custom%20accounting%20system."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-between p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-500/20 transition-colors group cursor-pointer"
@@ -103,10 +103,10 @@ export const ContactPage: React.FC = () => {
                     <div>
                       <p className="text-xs font-semibold uppercase text-muted-foreground">Email</p>
                       <a
-                        href="mailto:solutions@apexledger.demo"
+                        href="mailto:solutions@navix.demo"
                         className="text-sm font-bold text-foreground hover:text-primary transition-colors"
                       >
-                        solutions@apexledger.demo
+                        solutions@navix.demo
                       </a>
                     </div>
                   </div>
@@ -130,7 +130,7 @@ export const ContactPage: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-xs font-semibold uppercase text-muted-foreground">Headquarters & Operations</p>
-                      <p className="text-sm font-bold text-foreground">Apex Ledger Solutions</p>
+                      <p className="text-sm font-bold text-foreground">NAVIX Solutions</p>
                       <p className="text-xs text-muted-foreground">Global Remote & On-Premises Engineering</p>
                     </div>
                   </div>
@@ -164,7 +164,7 @@ export const ContactPage: React.FC = () => {
                       Message Sent Successfully!
                     </h4>
                     <p className="text-xs text-muted-foreground max-w-md mx-auto">
-                      Thank you for contacting Apex Ledger Solutions. A software consultant has received your message and will review it shortly.
+                      Thank you for contacting NAVIX Solutions. A software consultant has received your message and will review it shortly.
                     </p>
                     <Button
                       variant="outline"

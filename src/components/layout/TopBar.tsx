@@ -62,33 +62,61 @@ export const TopBar: React.FC<TopBarProps> = ({
         <button
           onClick={onOpenMobileSidebar}
           aria-label="Open navigation sidebar"
-          className="p-2 rounded-lg text-muted-foreground hover:bg-muted lg:hidden"
+          className="p-2 rounded-full text-muted-foreground hover:bg-muted lg:hidden"
         >
           <Menu className="h-5 w-5" />
         </button>
 
         <div className="flex items-center gap-2">
-          <h1 className="text-base sm:text-lg font-bold text-foreground capitalize tracking-tight">
+          <h1 className="text-base sm:text-lg font-extrabold text-foreground capitalize tracking-tight">
             {getPageTitle()}
           </h1>
-          <Badge variant="outline" className="hidden sm:inline-flex text-[10px] uppercase font-semibold">
+          <Badge variant="outline" className="hidden sm:inline-flex text-[10px] uppercase font-bold rounded-full">
             Demo
           </Badge>
         </div>
       </div>
 
-      {/* Center: Global Search Bar */}
-      <div className="hidden md:flex flex-1 max-w-xs lg:max-w-md mx-4">
+      {/* Center: Curved Quick Navigation Capsule (inspired by reference design) */}
+      <div className="hidden xl:flex items-center gap-1 bg-card/90 border border-border/70 rounded-full p-1 shadow-soft-island text-xs font-semibold">
+        {[
+          { label: 'Dashboard', path: '/demo/dashboard' },
+          { label: 'Sales POS', path: '/demo/sales' },
+          { label: 'Invoices', path: '/demo/invoices' },
+          { label: 'Inventory', path: '/demo/inventory' },
+          { label: 'Reports', path: '/demo/reports' },
+          { label: 'Accounting', path: '/demo/accounting' },
+        ].map((tab) => {
+          const active = location.pathname === tab.path;
+          return (
+            <Link
+              key={tab.path}
+              to={tab.path}
+              className={cn(
+                'px-3.5 py-1.5 rounded-full transition-all duration-200 text-xs',
+                active
+                  ? 'bg-accent text-white shadow-xs font-bold'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-muted/60'
+              )}
+            >
+              {tab.label}
+            </Link>
+          );
+        })}
+      </div>
+
+      {/* Center-Right: Global Search Bar with Curved Pill */}
+      <div className="hidden md:flex flex-1 max-w-xs lg:max-w-sm mx-4">
         <div className="relative w-full">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-muted-foreground">
-            <Search className="h-4 w-4" />
+          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-muted-foreground">
+            <Search className="h-3.5 w-3.5" />
           </div>
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search transactions, customers, products (Ctrl+K)..."
-            className="w-full h-9 pl-9 pr-4 rounded-lg border border-input bg-muted/40 text-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:bg-background transition-colors"
+            placeholder="Search records (Ctrl+K)..."
+            className="w-full h-9 pl-9 pr-4 rounded-full border border-input bg-card text-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:bg-background transition-all shadow-xs"
           />
         </div>
       </div>
@@ -100,11 +128,11 @@ export const TopBar: React.FC<TopBarProps> = ({
           variant="outline"
           size="sm"
           onClick={handleReset}
-          className="h-8 px-2.5 sm:px-3 text-xs gap-1.5 text-muted-foreground hover:text-foreground border-border/80"
+          className="h-8 px-3 text-xs gap-1.5 text-muted-foreground hover:text-foreground border-border/80 rounded-full"
           title="Reset all demo data back to clean baseline state"
         >
-          <RotateCcw className="h-3.5 w-3.5" />
-          <span className="hidden sm:inline">Reset Demo</span>
+          <RotateCcw className="h-3 w-3" />
+          <span className="hidden sm:inline">Reset</span>
         </Button>
 
         {/* Reset feedback toast indicator */}

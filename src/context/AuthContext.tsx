@@ -6,7 +6,7 @@ export const DEMO_ACCOUNTS: DemoAccount[] = [
     user: {
       id: 'usr-1',
       name: 'Alexander Hayes',
-      email: 'owner@apexledger.demo',
+      email: 'owner@navix.demo',
       role: 'owner',
       branch: 'Headquarters (HQ)',
     },
@@ -19,7 +19,7 @@ export const DEMO_ACCOUNTS: DemoAccount[] = [
     user: {
       id: 'usr-2',
       name: 'Samantha Reed',
-      email: 'manager@apexledger.demo',
+      email: 'manager@navix.demo',
       role: 'manager',
       branch: 'North Retail Branch',
     },
@@ -32,7 +32,7 @@ export const DEMO_ACCOUNTS: DemoAccount[] = [
     user: {
       id: 'usr-3',
       name: 'David Chen, CPA',
-      email: 'accountant@apexledger.demo',
+      email: 'accountant@navix.demo',
       role: 'accountant',
       branch: 'Finance Department',
     },
@@ -45,7 +45,7 @@ export const DEMO_ACCOUNTS: DemoAccount[] = [
     user: {
       id: 'usr-4',
       name: 'Maya Lin',
-      email: 'cashier@apexledger.demo',
+      email: 'cashier@navix.demo',
       role: 'cashier',
       branch: 'POS Terminal #02',
     },

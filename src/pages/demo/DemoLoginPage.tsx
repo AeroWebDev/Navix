@@ -52,7 +52,7 @@ export const DemoLoginPage: React.FC = () => {
           <div className="h-10 w-10 rounded-xl bg-primary flex items-center justify-center text-primary-foreground shadow-md">
             <ShieldCheck className="h-6 w-6" />
           </div>
-          <span className="text-2xl font-bold tracking-tight text-foreground">Apex Ledger</span>
+          <span className="text-2xl font-extrabold tracking-tight text-foreground">NAVIX</span>
         </Link>
 
         <div>
@@ -153,7 +153,7 @@ export const DemoLoginPage: React.FC = () => {
                   type="email"
                   value={selectedEmail}
                   onChange={(e) => setSelectedEmail(e.target.value)}
-                  placeholder="name@apexledger.demo"
+                  placeholder="name@navix.demo"
                   icon={<Mail className="h-4 w-4" />}
                   required
                 />
@@ -184,7 +184,7 @@ export const DemoLoginPage: React.FC = () => {
 
             <div className="pt-2 text-center">
               <Link to="/" className="text-xs text-muted-foreground hover:text-primary transition-colors">
-                ← Return to Apex Ledger Website
+                ← Return to NAVIX Website
               </Link>
             </div>
           </CardContent>

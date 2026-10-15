@@ -13,8 +13,8 @@ export const Footer: React.FC = () => {
               <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground">
                 <ShieldCheck className="h-5 w-5" />
               </div>
-              <span className="text-xl font-bold tracking-tight text-foreground">
-                Apex Ledger
+              <span className="text-xl font-extrabold tracking-tight text-foreground">
+                NAVIX
               </span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
@@ -101,8 +101,8 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary shrink-0" />
-                <a href="mailto:solutions@apexledger.demo" className="hover:text-primary truncate">
-                  solutions@apexledger.demo
+                <a href="mailto:solutions@navix.demo" className="hover:text-primary truncate">
+                  solutions@navix.demo
                 </a>
               </li>
               <li className="flex items-center gap-2">
@@ -137,7 +137,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Apex Ledger Solutions. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} NAVIX Solutions. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link to="/privacy" className="hover:text-foreground">
               Privacy

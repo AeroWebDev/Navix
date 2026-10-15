@@ -208,7 +208,7 @@ export const FeaturesPage: React.FC = () => {
         <div className="rounded-2xl border border-border bg-card p-6 sm:p-10 shadow-sm space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">
-              Off-The-Shelf SaaS vs. Apex Ledger Custom Software
+              Off-The-Shelf SaaS vs. NAVIX Custom Software
             </h2>
             <p className="text-sm text-muted-foreground">
               Why growing businesses choose a customized platform over rigid subscriptions.
@@ -221,7 +221,7 @@ export const FeaturesPage: React.FC = () => {
                 <tr className="border-b border-border text-xs uppercase tracking-wider text-muted-foreground">
                   <th className="py-3 px-4">Evaluation Factor</th>
                   <th className="py-3 px-4">Generic SaaS Accounting</th>
-                  <th className="py-3 px-4 text-primary font-bold">Apex Ledger Platform</th>
+                  <th className="py-3 px-4 text-primary font-bold">NAVIX Platform</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border text-xs sm:text-sm">

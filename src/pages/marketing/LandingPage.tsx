@@ -90,7 +90,7 @@ export const LandingPage: React.FC = () => {
                     <div className="h-3 w-3 rounded-full bg-amber-500/80" />
                     <div className="h-3 w-3 rounded-full bg-emerald-500/80" />
                     <span className="ml-2 text-xs font-mono font-medium text-muted-foreground">
-                      apexledger.local/demo
+                      navix.local/demo
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -221,7 +221,7 @@ export const LandingPage: React.FC = () => {
               Engineered for Real Commercial Workflows
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg">
-              Explore the fourteen interconnected modules that make up the Apex Ledger architecture.
+              Explore the fourteen interconnected modules that make up the NAVIX architecture.
             </p>
           </div>
 
@@ -366,7 +366,7 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Comparison: Standard SaaS vs. Apex Ledger Custom Software */}
+      {/* Comparison: Standard SaaS vs. NAVIX Custom Software */}
       <section className="py-20 bg-muted/20 border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -408,10 +408,10 @@ export const LandingPage: React.FC = () => {
               </ul>
             </div>
 
-            {/* Apex Ledger Tailored Build */}
+            {/* NAVIX Tailored Build */}
             <div className="p-6 rounded-2xl border-2 border-primary/40 bg-primary/5 space-y-5 shadow-sm">
               <div className="flex items-center justify-between pb-3 border-b border-primary/20">
-                <h3 className="text-base font-bold text-foreground">Apex Ledger Custom Build</h3>
+                <h3 className="text-base font-bold text-foreground">NAVIX Custom Build</h3>
                 <Badge variant="default" className="text-xs">
                   Your Terms
                 </Badge>
@@ -458,7 +458,7 @@ export const LandingPage: React.FC = () => {
             {[
               {
                 quote:
-                  'Apex Ledger allowed us to completely replace three disconnected spreadsheets. The real-time low-stock alerts alone saved us tens of thousands in lost sales.',
+                  'NAVIX allowed us to completely replace three disconnected spreadsheets. The real-time low-stock alerts alone saved us tens of thousands in lost sales.',
                 author: 'Tariq Al-Mansoor',
                 role: 'Managing Director, Al-Mansoor Retail Group',
                 industry: 'Retail & Distribution (5 Branches)',
@@ -468,7 +468,7 @@ export const LandingPage: React.FC = () => {
                 quote:
                   'Having a system customized specifically for our service business without paying enterprise ERP fees changed our cash flow overnight. Highly recommended.',
                 author: 'Elena Rostova',
-                role: 'Founder & CEO, Apex Engineering Services',
+                role: 'Founder & CEO, Horizon Engineering Services',
                 industry: 'Consulting & Technical Services',
                 metric: 'Saved $14,000/yr in SaaS seats',
               },

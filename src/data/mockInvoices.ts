@@ -37,7 +37,7 @@ export const MOCK_INVOICES: Invoice[] = [
     total: 4141.2,
     status: 'paid',
     paymentTerms: 'Net 30',
-    notes: 'Thank you for choosing Apex Ledger Solutions.',
+    notes: 'Thank you for choosing NAVIX Solutions.',
     paymentMethod: 'Bank Wire Transfer',
     paidDate: '2025-01-14',
   },

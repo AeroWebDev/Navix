@@ -226,7 +226,7 @@ export const CustomSoftwarePage: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <a
                 href={`https://wa.me/1234567890?text=${encodeURIComponent(
-                  `Hello Apex Ledger team! I just submitted custom software specification for ${submittedData.businessName}.`
+                  `Hello NAVIX team! I just submitted custom software specification for ${submittedData.businessName}.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"

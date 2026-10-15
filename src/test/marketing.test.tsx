@@ -16,7 +16,7 @@ describe('Phase 1: Marketing Components & Pages', () => {
       </BrowserRouter>
     );
 
-    expect(screen.getByText(/Apex Ledger/i)).toBeInTheDocument();
+    expect(screen.getByText(/NAVIX/i)).toBeInTheDocument();
     expect(screen.getByText(/Features/i)).toBeInTheDocument();
     expect(screen.getByText(/How It Works/i)).toBeInTheDocument();
     expect(screen.getByText(/Custom Software/i)).toBeInTheDocument();
