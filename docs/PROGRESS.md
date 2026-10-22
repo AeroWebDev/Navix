@@ -58,23 +58,32 @@
    - Updated `DashboardPage` Reorder Threshold Alerts to link directly to individual product detail pages.
    - 5 automated tests passing in `src/test/products.test.tsx` (PROD-001 through PROD-005).
 
+9. **Phase 7: Customers & Suppliers Module**
+   - Implemented `CustomersListPage` with client category filtering (B2B Commercial / Individual Retail), search by name, email, or account number, and accounts receivable tracking.
+   - Built `CustomerForm` & `NewCustomerPage` with real-time field validation.
+   - Built `CustomerDetailPage` featuring 3 dynamic tabs: Overview (financial metrics, contact, legal ID), Sales History (filtered orders for this client), and Invoices (billing and payment terms).
+   - Implemented `SuppliersListPage` with vendor search, status filtering, and payables metrics.
+   - Built `SupplierForm` & `NewSupplierPage` with validation.
+   - Built `SupplierDetailPage` featuring Overview and Purchase History tabs with order links.
+   - 8 automated tests passing in `src/test/customers_suppliers.test.tsx` (CUST-001 through CUST-004, SUPP-001 through SUPP-004).
+
 ---
 
 ### Current Test & Build Status:
 - **TypeScript:** 0 errors (`npm run type-check`).
-- **Vitest Suite:** 45/45 tests passing across 8 test suites (`npm run test -- --run`).
+- **Vitest Suite:** 53/53 tests passing across 9 test suites (`npm run test -- --run`).
 - **Vite Build:** Clean production build generated (`dist/`).
 - **Git:** Main branch up to date.
 
 ---
 
 ### Next Step:
-- **Phase 7: Customers & Suppliers Module**
-  - `CustomersListPage` and `CustomerDetailPage` with tabbed views (Overview, Sales History, Invoices).
-  - `CustomerForm` dialog/page with type filtering (individual/business).
-  - `SuppliersListPage` and `SupplierDetailPage`.
-  - Search, filter, and CRUD operations for both commercial entities.
-  - Automated tests for Customers & Suppliers.
+- **Phase 8: Expenses Module**
+  - `ExpensesListPage` with category breakdown summary and date range filter.
+  - Expense category donut chart / distribution widget.
+  - `ExpenseForm` & `NewExpensePage` with receipt upload placeholder and Zod validation.
+  - Edit & delete actions with confirmation modals.
+  - Automated test suite for Expenses.
 
 ---
 

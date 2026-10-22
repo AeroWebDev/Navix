@@ -29,6 +29,12 @@ import { PurchaseDetailPage } from '@/pages/demo/PurchaseDetailPage';
 import { ProductsListPage } from '@/pages/demo/ProductsListPage';
 import { NewProductPage } from '@/pages/demo/NewProductPage';
 import { ProductDetailPage } from '@/pages/demo/ProductDetailPage';
+import { CustomersListPage } from '@/pages/demo/CustomersListPage';
+import { NewCustomerPage } from '@/pages/demo/NewCustomerPage';
+import { CustomerDetailPage } from '@/pages/demo/CustomerDetailPage';
+import { SuppliersListPage } from '@/pages/demo/SuppliersListPage';
+import { NewSupplierPage } from '@/pages/demo/NewSupplierPage';
+import { SupplierDetailPage } from '@/pages/demo/SupplierDetailPage';
 import { DemoModulePlaceholder } from '@/pages/demo/DemoModulePlaceholder';
 import { DemoDataProvider } from '@/context/DemoDataContext';
 
@@ -196,16 +202,31 @@ export const App: React.FC = () => {
               path="/demo/customers"
               element={
                 <ProtectedRoute requiredPermission="customers">
-                  <DemoModulePlaceholder
-                    title="Customers CRM"
-                    moduleKey="Client Ledger"
-                    description="Manage customer profiles, contact info, credit balances, and order histories."
-                    features={[
-                      'Accounts receivable tracking',
-                      'Transaction history and invoice logs',
-                      'Company vs. Individual categorization',
-                    ]}
-                  />
+                  <CustomersListPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/customers/new"
+              element={
+                <ProtectedRoute requiredPermission="customers">
+                  <NewCustomerPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/customers/:id"
+              element={
+                <ProtectedRoute requiredPermission="customers">
+                  <CustomerDetailPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/customers/:id/edit"
+              element={
+                <ProtectedRoute requiredPermission="customers">
+                  <NewCustomerPage />
                 </ProtectedRoute>
               }
             />
@@ -214,16 +235,31 @@ export const App: React.FC = () => {
               path="/demo/suppliers"
               element={
                 <ProtectedRoute requiredPermission="suppliers">
-                  <DemoModulePlaceholder
-                    title="Suppliers & Vendors"
-                    moduleKey="Vendor Directory"
-                    description="Track supplier details, payables, payment terms, and supply orders."
-                    features={[
-                      'Outstanding payables ledger',
-                      'Purchase order history per vendor',
-                      'Contact details and payment terms',
-                    ]}
-                  />
+                  <SuppliersListPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/suppliers/new"
+              element={
+                <ProtectedRoute requiredPermission="suppliers">
+                  <NewSupplierPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/suppliers/:id"
+              element={
+                <ProtectedRoute requiredPermission="suppliers">
+                  <SupplierDetailPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/suppliers/:id/edit"
+              element={
+                <ProtectedRoute requiredPermission="suppliers">
+                  <NewSupplierPage />
                 </ProtectedRoute>
               }
             />

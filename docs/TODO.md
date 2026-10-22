@@ -191,21 +191,21 @@
 
 ## Phase 7: Customers & Suppliers
 
-- [ ] Implement `CustomersListPage.tsx` table — done when all mock customers render
-- [ ] Implement customer search by name or email — done when search filters correctly
-- [ ] Implement customer filter by type (individual / business) — done when filter applies
-- [ ] Implement "New Customer" dialog/page with `CustomerForm.tsx` and Zod validation — done when new customer appears in list after submit
-- [ ] Implement `CustomerDetailPage.tsx` with tabs: Overview, Sales History, Invoices — done when tabs switch and data is filtered for that customer
-- [ ] Implement edit and delete for customers — done when changes and deletions reflect in the list
-- [ ] Implement `SuppliersListPage.tsx` table — done when all mock suppliers render
-- [ ] Implement supplier search by name — done when search filters correctly
-- [ ] Implement "New Supplier" dialog/page with `SupplierForm.tsx` and Zod validation — done when new supplier appears in list
-- [ ] Implement `SupplierDetailPage.tsx` with tabs: Overview, Purchase History — done when tabs switch and data is filtered for that supplier
-- [ ] Implement edit and delete for suppliers — done when changes and deletions reflect in the list
-- [ ] Write test: `CustomersListPage` renders all mock customers — done when test passes
-- [ ] Write test: `CustomerDetailPage` sales history tab shows only sales for that customer — done when test passes
-- [ ] Write test: new customer form validates required name field — done when test passes
-- [ ] Commit: `feat: add customers and suppliers module` — done when commit exists
+- [x] Implement `CustomersListPage.tsx` table — done when all mock customers render
+- [x] Implement customer search by name or email — done when search filters correctly
+- [x] Implement customer filter by type (individual / business) — done when filter applies
+- [x] Implement "New Customer" dialog/page with `CustomerForm.tsx` and Zod validation — done when new customer appears in list after submit
+- [x] Implement `CustomerDetailPage.tsx` with tabs: Overview, Sales History, Invoices — done when tabs switch and data is filtered for that customer
+- [x] Implement edit and delete for customers — done when changes and deletions reflect in the list
+- [x] Implement `SuppliersListPage.tsx` table — done when all mock suppliers render
+- [x] Implement supplier search by name — done when search filters correctly
+- [x] Implement "New Supplier" dialog/page with `SupplierForm.tsx` and Zod validation — done when new supplier appears in list
+- [x] Implement `SupplierDetailPage.tsx` with tabs: Overview, Purchase History — done when tabs switch and data is filtered for that supplier
+- [x] Implement edit and delete for suppliers — done when changes and deletions reflect in the list
+- [x] Write test: `CustomersListPage` renders all mock customers — done when test passes
+- [x] Write test: `CustomerDetailPage` sales history tab shows only sales for that customer — done when test passes
+- [x] Write test: new customer form validates required name field — done when test passes
+- [x] Commit: `feat: add customers and suppliers module` — done when commit exists
 
 ---
 
