@@ -123,51 +123,51 @@
 
 ## Phase 4: Sales Module
 
-- [ ] Create `src/components/common/EmptyState.tsx` with icon, title, description, optional CTA button — done when it renders all props
-- [ ] Create `src/components/common/StatusBadge.tsx` with color variants per status string — done when badge renders correct color per status
-- [ ] Create `src/components/modals/ConfirmDeleteModal.tsx` with message, Cancel, and Confirm Delete buttons — done when modal opens, cancels, and confirms correctly
-- [ ] Create `src/components/tables/Pagination.tsx` with page number, previous/next buttons — done when correct page info renders and callbacks fire
-- [ ] Create `src/components/tables/DataTable.tsx` generic table with sortable columns and row actions slot — done when it renders any typed data array
-- [ ] Create `src/components/common/SearchInput.tsx` with debounced `onChange` (300ms) — done when rapid typing only fires callback once after delay
-- [ ] Implement `SalesListPage.tsx` table rendering all sales — done when all mock sales appear in the table
-- [ ] Implement sales search by customer name or sale number — done when typing filters the table in real time
-- [ ] Implement sales filter by status — done when selecting a status filters the table
-- [ ] Implement sales filter by date range — done when selecting date range filters the table
-- [ ] Implement sales table pagination (10 rows per page) — done when rows are split across pages
-- [ ] Implement `NewSalePage.tsx` with `SaleForm.tsx`: customer selector, date, payment method, notes fields — done when all fields render
-- [ ] Implement `SaleForm.tsx` dynamic line items: add/remove rows, product selector, qty, unit price, discount per row — done when items can be added and removed
-- [ ] Implement `SaleForm.tsx` auto-calculation: subtotal, tax, discount, total update reactively — done when changing qty updates total without submit
-- [ ] Implement `SaleForm.tsx` Zod validation (customer required, at least 1 item, qty > 0, price ≥ 0) — done when invalid form shows inline error messages
-- [ ] On valid submit: dispatch `ADD_SALE`, show success toast, navigate to `/demo/sales` — done when form submits and list updates
-- [ ] Implement `SaleDetailPage.tsx` read-only display of all sale fields — done when all fields render correctly
-- [ ] Implement edit action on `SaleDetailPage` (pre-fill form with existing data) — done when edited sale reflects changes in the list
-- [ ] Implement delete action on `SaleDetailPage` with `ConfirmDeleteModal` — done when sale is removed from list after confirm
-- [ ] Implement "Create Invoice" button on `SaleDetailPage` that navigates to `/demo/invoices/new` with pre-filled data — done when invoice form is pre-populated from sale
-- [ ] Write test: `SalesListPage` renders all mock sales — done when test passes
-- [ ] Write test: sales search filters results correctly — done when test passes
-- [ ] Write test: `SaleForm` shows validation error when no customer selected — done when test passes
-- [ ] Write test: `SaleForm` shows validation error when line item qty is 0 — done when test passes
-- [ ] Write test: new sale submission adds sale to context — done when test passes
-- [ ] Write test: `ConfirmDeleteModal` calls onConfirm when Confirm Delete clicked — done when test passes
-- [ ] Commit: `feat: add sales module with CRUD and search` — done when commit exists
+- [x] Create `src/components/common/EmptyState.tsx` with icon, title, description, optional CTA button — done when it renders all props
+- [x] Create `src/components/common/StatusBadge.tsx` with color variants per status string — done when badge renders correct color per status
+- [x] Create `src/components/modals/ConfirmDeleteModal.tsx` with message, Cancel, and Confirm Delete buttons — done when modal opens, cancels, and confirms correctly
+- [x] Create `src/components/tables/Pagination.tsx` with page number, previous/next buttons — done when correct page info renders and callbacks fire
+- [x] Create `src/components/tables/DataTable.tsx` generic table with sortable columns and row actions slot — done when it renders any typed data array
+- [x] Create `src/components/common/SearchInput.tsx` with debounced `onChange` (300ms) — done when rapid typing only fires callback once after delay
+- [x] Implement `SalesListPage.tsx` table rendering all sales — done when all mock sales appear in the table
+- [x] Implement sales search by customer name or sale number — done when typing filters the table in real time
+- [x] Implement sales filter by status — done when selecting a status filters the table
+- [x] Implement sales filter by date range — done when selecting date range filters the table
+- [x] Implement sales table pagination (10 rows per page) — done when rows are split across pages
+- [x] Implement `NewSalePage.tsx` with `SaleForm.tsx`: customer selector, date, payment method, notes fields — done when all fields render
+- [x] Implement `SaleForm.tsx` dynamic line items: add/remove rows, product selector, qty, unit price, discount per row — done when items can be added and removed
+- [x] Implement `SaleForm.tsx` auto-calculation: subtotal, tax, discount, total update reactively — done when changing qty updates total without submit
+- [x] Implement `SaleForm.tsx` Zod validation (customer required, at least 1 item, qty > 0, price ≥ 0) — done when invalid form shows inline error messages
+- [x] On valid submit: dispatch `ADD_SALE`, show success toast, navigate to `/demo/sales` — done when form submits and list updates
+- [x] Implement `SaleDetailPage.tsx` read-only display of all sale fields — done when all fields render correctly
+- [x] Implement edit action on `SaleDetailPage` (pre-fill form with existing data) — done when edited sale reflects changes in the list
+- [x] Implement delete action on `SaleDetailPage` with `ConfirmDeleteModal` — done when sale is removed from list after confirm
+- [x] Implement "Create Invoice" button on `SaleDetailPage` that navigates to `/demo/invoices/new` with pre-filled data — done when invoice form is pre-populated from sale
+- [x] Write test: `SalesListPage` renders all mock sales — done when test passes
+- [x] Write test: sales search filters results correctly — done when test passes
+- [x] Write test: `SaleForm` shows validation error when no customer selected — done when test passes
+- [x] Write test: `SaleForm` shows validation error when line item qty is 0 — done when test passes
+- [x] Write test: new sale submission adds sale to context — done when test passes
+- [x] Write test: `ConfirmDeleteModal` calls onConfirm when Confirm Delete clicked — done when test passes
+- [x] Commit: `feat: add sales module with CRUD and search` — done when commit exists
 
 ---
 
 ## Phase 5: Purchases Module
 
-- [ ] Implement `PurchasesListPage.tsx` table with all purchases — done when all mock purchases render
-- [ ] Implement purchases search by supplier name or PO number — done when search filters the table
-- [ ] Implement purchases filter by status and payment status — done when filters apply correctly
-- [ ] Implement `NewPurchasePage.tsx` with `PurchaseForm.tsx` (supplier selector, dates, line items, notes) — done when form renders and validates
-- [ ] Implement `PurchaseForm.tsx` Zod validation — done when invalid form shows inline errors
-- [ ] On valid submit: dispatch `ADD_PURCHASE`, show success toast, navigate to list — done when list updates
-- [ ] Implement `PurchaseDetailPage.tsx` read-only view with status and payment status controls — done when all fields render
-- [ ] Implement "Mark as Received" action: updates purchase status and dispatches stock update to `ProductsContext` for each line item — done when product stock qty increases
-- [ ] Implement edit and delete actions on `PurchaseDetailPage` — done when changes reflect in list
-- [ ] Write test: `PurchasesListPage` renders all mock purchases — done when test passes
-- [ ] Write test: marking purchase as received increases product stock quantity — done when test passes
-- [ ] Write test: `PurchaseForm` validates required supplier — done when test passes
-- [ ] Commit: `feat: add purchases module with stock update on receive` — done when commit exists
+- [x] Implement `PurchasesListPage.tsx` table with all purchases — done when all mock purchases render
+- [x] Implement purchases search by supplier name or PO number — done when search filters the table
+- [x] Implement purchases filter by status and payment status — done when filters apply correctly
+- [x] Implement `NewPurchasePage.tsx` with `PurchaseForm.tsx` (supplier selector, dates, line items, notes) — done when form renders and validates
+- [x] Implement `PurchaseForm.tsx` Zod validation — done when invalid form shows inline errors
+- [x] On valid submit: dispatch `ADD_PURCHASE`, show success toast, navigate to list — done when list updates
+- [x] Implement `PurchaseDetailPage.tsx` read-only view with status and payment status controls — done when all fields render
+- [x] Implement "Mark as Received" action: updates purchase status and dispatches stock update to `ProductsContext` for each line item — done when product stock qty increases
+- [x] Implement edit and delete actions on `PurchaseDetailPage` — done when changes reflect in list
+- [x] Write test: `PurchasesListPage` renders all mock purchases — done when test passes
+- [x] Write test: marking purchase as received increases product stock quantity — done when test passes
+- [x] Write test: `PurchaseForm` validates required supplier — done when test passes
+- [x] Commit: `feat: add purchases module with stock update on receive` — done when commit exists
 
 ---
 

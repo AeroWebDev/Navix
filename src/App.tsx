@@ -23,6 +23,9 @@ import { DashboardPage } from '@/pages/demo/DashboardPage';
 import { SalesListPage } from '@/pages/demo/SalesListPage';
 import { NewSalePage } from '@/pages/demo/NewSalePage';
 import { SaleDetailPage } from '@/pages/demo/SaleDetailPage';
+import { PurchasesListPage } from '@/pages/demo/PurchasesListPage';
+import { NewPurchasePage } from '@/pages/demo/NewPurchasePage';
+import { PurchaseDetailPage } from '@/pages/demo/PurchaseDetailPage';
 import { DemoModulePlaceholder } from '@/pages/demo/DemoModulePlaceholder';
 import { DemoDataProvider } from '@/context/DemoDataContext';
 
@@ -106,16 +109,31 @@ export const App: React.FC = () => {
               path="/demo/purchases"
               element={
                 <ProtectedRoute requiredPermission="purchases">
-                  <DemoModulePlaceholder
-                    title="Purchases & Procurement"
-                    moduleKey="Vendor Orders"
-                    description="Manage purchase orders from suppliers, track incoming shipments, and audit payables."
-                    features={[
-                      'Purchase order creation and receiving status',
-                      'Supplier catalogue cost tracking',
-                      'Tax breakdown and payment status',
-                    ]}
-                  />
+                  <PurchasesListPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/purchases/new"
+              element={
+                <ProtectedRoute requiredPermission="purchases">
+                  <NewPurchasePage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/purchases/:id"
+              element={
+                <ProtectedRoute requiredPermission="purchases">
+                  <PurchaseDetailPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/purchases/:id/edit"
+              element={
+                <ProtectedRoute requiredPermission="purchases">
+                  <NewPurchasePage />
                 </ProtectedRoute>
               }
             />

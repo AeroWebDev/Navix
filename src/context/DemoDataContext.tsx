@@ -34,6 +34,7 @@ export interface DemoDataContextType {
   addPurchase: (purchase: Omit<Purchase, 'id'>) => Purchase;
   updatePurchase: (id: string, updates: Partial<Purchase>) => void;
   deletePurchase: (id: string) => void;
+  markPurchaseAsReceived: (id: string) => void;
 
   // Products
   products: Product[];
@@ -146,6 +147,33 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   const deletePurchase = (id: string) => {
     setPurchases((prev) => prev.filter((p) => p.id !== id));
+  };
+
+  const markPurchaseAsReceived = (id: string) => {
+    const purchase = purchases.find((p) => p.id === id);
+    if (!purchase || purchase.status === 'received') return;
+
+    setPurchases((prev) =>
+      prev.map((p) => (p.id === id ? { ...p, status: 'received' } : p))
+    );
+
+    purchase.items.forEach((item) => {
+      setProducts((prev) =>
+        prev.map((prod) => {
+          if (prod.id === item.productId) {
+            const newQty = prod.stockQuantity + item.quantity;
+            const status =
+              newQty === 0
+                ? 'out_of_stock'
+                : newQty <= prod.minStockLevel
+                ? 'low_stock'
+                : 'in_stock';
+            return { ...prod, stockQuantity: newQty, status };
+          }
+          return prod;
+        })
+      );
+    });
   };
 
   // Products CRUD
@@ -364,6 +392,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
         addPurchase,
         updatePurchase,
         deletePurchase,
+        markPurchaseAsReceived,
         products,
         addProduct,
         updateProduct,
@@ -418,8 +447,8 @@ export const useSales = () => {
 };
 
 export const usePurchases = () => {
-  const { purchases, addPurchase, updatePurchase, deletePurchase } = useDemoData();
-  return { purchases, addPurchase, updatePurchase, deletePurchase };
+  const { purchases, addPurchase, updatePurchase, deletePurchase, markPurchaseAsReceived } = useDemoData();
+  return { purchases, addPurchase, updatePurchase, deletePurchase, markPurchaseAsReceived };
 };
 
 export const useProducts = () => {

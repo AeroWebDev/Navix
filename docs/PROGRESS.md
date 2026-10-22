@@ -35,23 +35,37 @@
    - Upgraded charts (`RevenueChart.tsx` & `ExpensePieChart.tsx`) with thick pill bars, smooth bezier curve toggle, and executive corporate fleet card widget.
    - Rounded pill buttons (`rounded-full`) and organic cards (`rounded-3xl`).
 
+6. **Phase 4: Sales Module**
+   - Implemented `SalesListPage` with real-time search, payment status and date filtering, sortable `DataTable`, and `Pagination`.
+   - Built `SaleForm` with dynamic line items, reactive tax and subtotal computation, and validation.
+   - Created `NewSalePage` (create & edit) and `SaleDetailPage` (breakdown, print, invoice creation shortcut, delete modal).
+   - 8 automated tests passing (SALE-001 through SALE-008).
+
+7. **Phase 5: Purchases Module**
+   - Built `PurchasesListPage` with KPI strip (Total POs, Total Spend, Received, Awaiting Stock), debounced search by PO number / supplier, fulfillment and payment status filters, pagination, and sorting.
+   - Implemented `PurchaseForm` with supplier selector, dynamic line items (product, SKU, quantity, unit cost, tax rate), real-time financial calculations, and validation.
+   - Implemented `NewPurchasePage` for creating and editing purchase orders.
+   - Implemented `PurchaseDetailPage` with logistics breakdown, vendor details, print action, delete modal, and "Mark as Received" button.
+   - Implemented `markPurchaseAsReceived` in `DemoDataContext` which updates PO status to `received` and synchronizes product inventory stock quantities.
+   - 6 automated tests passing in `src/test/purchases.test.tsx` (PURCH-001 through PURCH-006).
+
 ---
 
 ### Current Test & Build Status:
 - **TypeScript:** 0 errors (`npm run type-check`).
-- **Vitest Suite:** 26/26 tests passing across 5 test suites (`npm run test -- --run`).
+- **Vitest Suite:** 40/40 tests passing across 7 test suites (`npm run test -- --run`).
 - **Vite Build:** Clean production build generated (`dist/`).
-- **Git:** All work committed to `main` branch.
+- **Git:** Main branch up to date.
 
 ---
 
 ### Next Step:
-- **Phase 4: Sales Module**
-  - Reusable `DataTable`, `Pagination`, `SearchInput`, and `StatusBadge` components.
-  - Sales List Page with real-time customer/number search and status filtering.
-  - `NewSalePage` with dynamic line items, live tax & subtotal calculations, and Zod validation.
-  - `SaleDetailPage` with read-only summary, edit, delete confirmation modal, and "Create Invoice" conversion shortcut.
-  - Automated test suite for Sales Module.
+- **Phase 6: Products & Inventory**
+  - `ProductsListPage` with stock level status badges and low-stock row alerts.
+  - Category and status filters, SKU / name search.
+  - `ProductForm` & `NewProductPage` for adding/editing products.
+  - `ProductDetailPage` with stock adjustment modal/form (restock, damage, audit).
+  - Dashboard low-stock alerts linkage.
 
 ---
 
