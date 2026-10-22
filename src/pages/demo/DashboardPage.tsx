@@ -413,22 +413,23 @@ export const DashboardPage: React.FC = () => {
                 </CardTitle>
               </div>
               <Link
-                to="/demo/inventory"
+                to="/demo/products"
                 className="text-xs font-semibold text-primary hover:underline flex items-center gap-1"
               >
-                Inventory Control
+                Inventory Catalogue
                 <ArrowUpRight className="h-3 w-3" />
               </Link>
             </CardHeader>
             <CardContent className="p-0">
               <div className="divide-y divide-border text-xs">
                 {lowStockProducts.slice(0, 4).map((p) => (
-                  <div
+                  <Link
                     key={p.id}
-                    className="p-3 flex items-center justify-between hover:bg-muted/30 transition-colors"
+                    to={`/demo/products/${p.id}`}
+                    className="p-3 flex items-center justify-between hover:bg-muted/40 transition-colors group cursor-pointer block"
                   >
                     <div className="space-y-0.5">
-                      <p className="font-semibold text-foreground">{p.name}</p>
+                      <p className="font-semibold text-foreground group-hover:text-accent transition-colors">{p.name}</p>
                       <p className="text-[10px] text-muted-foreground">
                         SKU: {p.sku} • Supplier: {p.supplierName}
                       </p>
@@ -446,7 +447,7 @@ export const DashboardPage: React.FC = () => {
                         </Badge>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </CardContent>

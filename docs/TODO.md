@@ -173,19 +173,19 @@
 
 ## Phase 6: Products & Inventory
 
-- [ ] Implement `ProductsListPage.tsx` table with all products — done when all mock products render
-- [ ] Implement low-stock row highlighting (background color change when stock ≤ reorder level) — done when low-stock rows are visually distinct
-- [ ] Implement product search by name or SKU — done when search filters results
-- [ ] Implement product filter by category and status — done when filters apply correctly
-- [ ] Implement `NewProductPage.tsx` with `ProductForm.tsx` (all product fields, Zod validation) — done when form validates and submits
-- [ ] Implement `ProductDetailPage.tsx` full display of product fields — done when all fields render
-- [ ] Implement stock adjustment form on `ProductDetailPage` (add/subtract qty with reason note) — done when adjusting stock updates `stockQuantity` in context
-- [ ] Implement edit and delete on `ProductDetailPage` — done when changes and deletions reflect in the list
-- [ ] Update `DashboardPage` low-stock list to link to each product's detail page — done when clicking an alert navigates to the product
-- [ ] Write test: `ProductsListPage` renders all mock products — done when test passes
-- [ ] Write test: low-stock products have the highlight class applied — done when test passes
-- [ ] Write test: stock adjustment increases or decreases `stockQuantity` correctly — done when test passes
-- [ ] Commit: `feat: add products and inventory module` — done when commit exists
+- [x] Implement `ProductsListPage.tsx` table with all products — done when all mock products render
+- [x] Implement low-stock row highlighting (background color change when stock ≤ reorder level) — done when low-stock rows are visually distinct
+- [x] Implement product search by name or SKU — done when search filters results
+- [x] Implement product filter by category and status — done when filters apply correctly
+- [x] Implement `NewProductPage.tsx` with `ProductForm.tsx` (all product fields, Zod validation) — done when form validates and submits
+- [x] Implement `ProductDetailPage.tsx` full display of product fields — done when all fields render
+- [x] Implement stock adjustment form on `ProductDetailPage` (add/subtract qty with reason note) — done when adjusting stock updates `stockQuantity` in context
+- [x] Implement edit and delete on `ProductDetailPage` — done when changes and deletions reflect in the list
+- [x] Update `DashboardPage` low-stock list to link to each product's detail page — done when clicking an alert navigates to the product
+- [x] Write test: `ProductsListPage` renders all mock products — done when test passes
+- [x] Write test: low-stock products have the highlight class applied — done when test passes
+- [x] Write test: stock adjustment increases or decreases `stockQuantity` correctly — done when test passes
+- [x] Commit: `feat: add products and inventory module` — done when commit exists
 
 ---
 

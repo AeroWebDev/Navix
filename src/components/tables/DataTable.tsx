@@ -20,6 +20,7 @@ export interface DataTableProps<T> {
   isLoading?: boolean;
   emptyState?: React.ReactNode;
   onRowClick?: (row: T) => void;
+  rowClassName?: (row: T) => string | undefined;
   className?: string;
 }
 
@@ -32,6 +33,7 @@ export function DataTable<T extends Record<string, any>>({
   isLoading = false,
   emptyState,
   onRowClick,
+  rowClassName,
   className,
 }: DataTableProps<T>) {
   const handleHeaderClick = (col: Column<T>) => {
@@ -102,7 +104,8 @@ export function DataTable<T extends Record<string, any>>({
                     onClick={() => onRowClick && onRowClick(row)}
                     className={cn(
                       'transition-colors hover:bg-muted/40',
-                      onRowClick && 'cursor-pointer'
+                      onRowClick && 'cursor-pointer',
+                      rowClassName && rowClassName(row)
                     )}
                   >
                     {columns.map((col) => (

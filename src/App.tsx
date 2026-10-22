@@ -26,6 +26,9 @@ import { SaleDetailPage } from '@/pages/demo/SaleDetailPage';
 import { PurchasesListPage } from '@/pages/demo/PurchasesListPage';
 import { NewPurchasePage } from '@/pages/demo/NewPurchasePage';
 import { PurchaseDetailPage } from '@/pages/demo/PurchaseDetailPage';
+import { ProductsListPage } from '@/pages/demo/ProductsListPage';
+import { NewProductPage } from '@/pages/demo/NewProductPage';
+import { ProductDetailPage } from '@/pages/demo/ProductDetailPage';
 import { DemoModulePlaceholder } from '@/pages/demo/DemoModulePlaceholder';
 import { DemoDataProvider } from '@/context/DemoDataContext';
 
@@ -142,16 +145,31 @@ export const App: React.FC = () => {
               path="/demo/products"
               element={
                 <ProtectedRoute requiredPermission="products">
-                  <DemoModulePlaceholder
-                    title="Products Catalogue"
-                    moduleKey="Product Directory"
-                    description="SKU management, cost price, selling price, and stock levels."
-                    features={[
-                      'SKU generation and barcode support',
-                      'Category management and filtering',
-                      'Supplier assignment and reorder points',
-                    ]}
-                  />
+                  <ProductsListPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/products/new"
+              element={
+                <ProtectedRoute requiredPermission="products">
+                  <NewProductPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/products/:id"
+              element={
+                <ProtectedRoute requiredPermission="products">
+                  <ProductDetailPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/products/:id/edit"
+              element={
+                <ProtectedRoute requiredPermission="products">
+                  <NewProductPage />
                 </ProtectedRoute>
               }
             />

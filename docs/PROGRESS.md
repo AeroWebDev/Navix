@@ -49,23 +49,32 @@
    - Implemented `markPurchaseAsReceived` in `DemoDataContext` which updates PO status to `received` and synchronizes product inventory stock quantities.
    - 6 automated tests passing in `src/test/purchases.test.tsx` (PURCH-001 through PURCH-006).
 
+8. **Phase 6: Products & Inventory Module**
+   - Implemented `ProductsListPage` with live stock valuation KPI strip, category and status filters, name/SKU search, and distinctive low-stock visual row highlighting (`low-stock-highlight`).
+   - Implemented `ProductForm` with profit margin computation, pricing models, and threshold inputs.
+   - Built `NewProductPage` for catalogue creation and editing.
+   - Built `ProductDetailPage` with technical specifications, commercial pricing metrics, delete confirmation modal, and stock adjustment launcher.
+   - Implemented `StockAdjustmentModal` supporting positive and negative inventory corrections with audit reasons (restock, audit, damage, return).
+   - Updated `DashboardPage` Reorder Threshold Alerts to link directly to individual product detail pages.
+   - 5 automated tests passing in `src/test/products.test.tsx` (PROD-001 through PROD-005).
+
 ---
 
 ### Current Test & Build Status:
 - **TypeScript:** 0 errors (`npm run type-check`).
-- **Vitest Suite:** 40/40 tests passing across 7 test suites (`npm run test -- --run`).
+- **Vitest Suite:** 45/45 tests passing across 8 test suites (`npm run test -- --run`).
 - **Vite Build:** Clean production build generated (`dist/`).
 - **Git:** Main branch up to date.
 
 ---
 
 ### Next Step:
-- **Phase 6: Products & Inventory**
-  - `ProductsListPage` with stock level status badges and low-stock row alerts.
-  - Category and status filters, SKU / name search.
-  - `ProductForm` & `NewProductPage` for adding/editing products.
-  - `ProductDetailPage` with stock adjustment modal/form (restock, damage, audit).
-  - Dashboard low-stock alerts linkage.
+- **Phase 7: Customers & Suppliers Module**
+  - `CustomersListPage` and `CustomerDetailPage` with tabbed views (Overview, Sales History, Invoices).
+  - `CustomerForm` dialog/page with type filtering (individual/business).
+  - `SuppliersListPage` and `SupplierDetailPage`.
+  - Search, filter, and CRUD operations for both commercial entities.
+  - Automated tests for Customers & Suppliers.
 
 ---
 
