@@ -19,7 +19,6 @@ import { SearchInput } from '@/components/common/SearchInput';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { ConfirmDeleteModal } from '@/components/modals/ConfirmDeleteModal';
 import { Button } from '@/components/ui/Button';
-import { Badge } from '@/components/ui/Badge';
 import { formatCurrency, formatDate } from '@/utils/formatters';
 
 const PAGE_SIZE = 10;
@@ -229,14 +228,9 @@ export const PurchasesListPage: React.FC = () => {
       {/* Top Banner & Action */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-border/60">
         <div>
-          <div className="flex items-center gap-2">
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
-              Purchases & Procurement
-            </h1>
-            <Badge variant="outline" className="rounded-full px-2.5 py-0.5 text-xs font-semibold">
-              Live Demo
-            </Badge>
-          </div>
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
+            Purchases & Procurement
+          </h1>
           <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
             Manage vendor purchase orders, receive incoming inventory shipments, and audit accounts payable.
           </p>

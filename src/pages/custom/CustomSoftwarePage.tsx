@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import {
-  Sparkles,
   CheckCircle2,
   ShieldCheck,
   Send,
@@ -142,8 +141,8 @@ export const CustomSoftwarePage: React.FC = () => {
     <div className="py-12 sm:py-20 space-y-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Hero Header */}
       <div className="text-center space-y-4 max-w-3xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary">
-          <Sparkles className="h-3.5 w-3.5" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-xs font-semibold text-accent">
+          <ShieldCheck className="h-3.5 w-3.5" />
           <span>Tailored Commercial Software Architecture</span>
         </div>
 
@@ -155,11 +154,11 @@ export const CustomSoftwarePage: React.FC = () => {
           The interactive preview in this portal demonstrates our modular core capabilities. We engineer, customize, and deploy a fully branded version with your exact tax rules, currency, branch workflows, and database infrastructure.
         </p>
 
-        {/* Commercial Prototype Notice */}
-        <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-800 dark:text-amber-300 max-w-2xl mx-auto flex items-center justify-center gap-2">
-          <ShieldCheck className="h-4 w-4 shrink-0 text-amber-600 dark:text-amber-400" />
+        {/* Commercial Deployment Notice */}
+        <div className="p-3.5 rounded-xl bg-card border border-border/80 text-xs text-muted-foreground max-w-2xl mx-auto flex items-center justify-center gap-2 shadow-xs">
+          <ShieldCheck className="h-4 w-4 shrink-0 text-accent" />
           <span>
-            <strong>Prototype Notice:</strong> Our live demo is an interactive showcase. Final production builds are deployed with dedicated backend databases and custom source code ownership.
+            <strong className="text-foreground">Commercial Software Delivery:</strong> Every production deployment includes dedicated backend databases, custom source code, and white-label branding.
           </span>
         </div>
       </div>

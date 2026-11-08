@@ -69,8 +69,8 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ data, height = 300 }
         </div>
       </div>
 
-      <div className="w-full" style={{ height }}>
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="w-full min-w-0" style={{ height }}>
+        <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
           {chartType === 'bar' ? (
             <BarChart
               data={data}

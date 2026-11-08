@@ -18,7 +18,6 @@ import {
   ShieldCheck,
   ChevronLeft,
   ChevronRight,
-  Sparkles,
   Lock,
 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
@@ -170,7 +169,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   NAVIX
                 </span>
                 <span className="text-[10px] text-muted-foreground uppercase font-bold tracking-wider">
-                  Live Preview
+                  Enterprise ERP
                 </span>
               </div>
             )}
@@ -260,8 +259,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
           {!isCollapsed && (
             <div className="mt-2.5 pt-2 border-t border-border/40 flex items-center justify-between text-[10px] text-muted-foreground">
-              <span className="flex items-center gap-1 text-emerald-600 font-semibold">
-                <Sparkles className="h-3 w-3" /> In-Memory
+              <span className="flex items-center gap-1.5 text-emerald-600 font-semibold">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 inline-block" />
+                Active Session
               </span>
               <Link to="/demo/login" className="hover:text-primary font-semibold transition-colors">
                 Switch Role

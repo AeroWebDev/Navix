@@ -28,7 +28,7 @@ export const ConfirmDeleteModal: React.FC<ConfirmDeleteModalProps> = ({
         <div className="flex items-center gap-3 p-3 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-700 dark:text-rose-300">
           <AlertTriangle className="h-5 w-5 shrink-0" />
           <p className="text-xs font-semibold">
-            This action deletes the record from current in-memory preview state.
+            Warning: This action cannot be undone and will permanently remove this record.
           </p>
         </div>
 

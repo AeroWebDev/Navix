@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 import { useSuppliers } from '@/hooks/useSuppliers';
 import { SupplierForm } from '@/components/forms/SupplierForm';
 import { Supplier } from '@/types/supplier';
@@ -61,11 +61,6 @@ export const NewSupplierPage: React.FC = () => {
           <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
             Configure supplier commercial terms, representative contacts, dispatch addresses, and tax numbers.
           </p>
-        </div>
-
-        <div className="flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-500/20">
-          <Sparkles className="h-4 w-4" />
-          <span>Procurement Hub Sync</span>
         </div>
       </div>
 

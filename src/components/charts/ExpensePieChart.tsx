@@ -31,8 +31,8 @@ const COLORS = [
 
 export const ExpensePieChart: React.FC<ExpensePieChartProps> = ({ data, height = 320 }) => {
   return (
-    <div className="w-full" style={{ height }}>
-      <ResponsiveContainer width="100%" height="100%">
+    <div className="w-full min-w-0" style={{ height }}>
+      <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
         <PieChart>
           <Pie
             data={data}

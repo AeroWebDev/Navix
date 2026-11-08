@@ -298,7 +298,7 @@ export const DashboardPage: React.FC = () => {
       {/* Tables Section: Recent Transactions & Invoices & Low Stock */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Recent Sales Ledger (Col 6) */}
-        <Card className="lg:col-span-6 shadow-xs border-border">
+        <Card className="lg:col-span-6 rounded-3xl shadow-soft-island border-border/60 overflow-hidden">
           <CardHeader className="flex flex-row items-center justify-between pb-3 border-b border-border/70">
             <div className="flex items-center gap-2">
               <ShoppingCart className="h-4 w-4 text-primary" />
@@ -351,7 +351,7 @@ export const DashboardPage: React.FC = () => {
         {/* Recent Invoices & Low Stock Column (Col 6) */}
         <div className="lg:col-span-6 space-y-6">
           {/* Recent Invoices Mini Table */}
-          <Card className="shadow-xs border-border">
+          <Card className="rounded-3xl shadow-soft-island border-border/60 overflow-hidden">
             <CardHeader className="flex flex-row items-center justify-between pb-3 border-b border-border/70">
               <div className="flex items-center gap-2">
                 <Receipt className="h-4 w-4 text-primary" />
@@ -404,7 +404,7 @@ export const DashboardPage: React.FC = () => {
           </Card>
 
           {/* Low Stock Alerts List */}
-          <Card className="shadow-xs border-border">
+          <Card className="rounded-3xl shadow-soft-island border-border/60 overflow-hidden">
             <CardHeader className="flex flex-row items-center justify-between pb-3 border-b border-border/70">
               <div className="flex items-center gap-2">
                 <AlertTriangle className="h-4 w-4 text-amber-500" />

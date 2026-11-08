@@ -460,7 +460,7 @@ export const SaleForm: React.FC<SaleFormProps> = ({
         <div className="pt-4 border-t border-border/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <Calculator className="h-4 w-4 text-accent" />
-            <span>Taxes & totals update reactively with live in-memory computation.</span>
+            <span>Taxes and line-item discounts are automatically computed in real-time.</span>
           </div>
 
           <div className="w-full sm:w-72 space-y-1.5 text-xs">

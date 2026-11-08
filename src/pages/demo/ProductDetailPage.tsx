@@ -38,7 +38,7 @@ export const ProductDetailPage: React.FC = () => {
         <AlertCircle className="h-12 w-12 text-rose-500 mx-auto" />
         <h2 className="text-xl font-bold text-foreground">Product Not Found</h2>
         <p className="text-xs text-muted-foreground">
-          The requested product could not be located in current in-memory inventory.
+          The requested product could not be located in catalogue inventory.
         </p>
         <Link to="/demo/products">
           <Button variant="outline" size="sm" className="rounded-full px-5">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 import { useProducts } from '@/hooks/useProducts';
 import { ProductForm } from '@/components/forms/ProductForm';
 import { Product } from '@/types/product';
@@ -55,11 +55,6 @@ export const NewProductPage: React.FC = () => {
           <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
             Configure product metadata, pricing margins, vendor associations, and reorder points.
           </p>
-        </div>
-
-        <div className="flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-500/20">
-          <Sparkles className="h-4 w-4" />
-          <span>Real-Time Inventory Engine</span>
         </div>
       </div>
 

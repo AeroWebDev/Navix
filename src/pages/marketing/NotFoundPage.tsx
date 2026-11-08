@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldAlert, Home, ArrowRight, Sparkles } from 'lucide-react';
+import { ShieldAlert, Home, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 export const NotFoundPage: React.FC = () => {
@@ -34,8 +34,7 @@ export const NotFoundPage: React.FC = () => {
           </Button>
         </Link>
         <Link to="/custom-software">
-          <Button variant="ghost" className="gap-1.5 text-xs">
-            <Sparkles className="h-3.5 w-3.5 text-amber-500" />
+          <Button variant="ghost" className="text-xs">
             Custom Software Form
           </Button>
         </Link>

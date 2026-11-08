@@ -9,7 +9,7 @@ import {
   CheckCircle2,
   Lock,
   ArrowRight,
-  Sparkles,
+  ShieldCheck,
   ChevronRight,
   Star,
   Quote,
@@ -34,9 +34,9 @@ export const LandingPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left Column: Headlines & CTA */}
             <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
-                <Sparkles className="h-3.5 w-3.5" />
-                <span>Custom ERP & Accounting Software Architecture</span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-xs font-semibold text-accent">
+                <ShieldCheck className="h-3.5 w-3.5" />
+                <span>Modern ERP & Commercial Accounting Platform</span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.12]">
@@ -56,8 +56,7 @@ export const LandingPage: React.FC = () => {
                   </Button>
                 </Link>
                 <Link to="/custom-software" className="w-full sm:w-auto">
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2 text-base px-8 py-6 bg-card hover:bg-accent">
-                    <Sparkles className="h-4 w-4 text-amber-500" />
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2 text-base px-8 py-6 bg-card hover:bg-accent/10">
                     Request Your Software
                   </Button>
                 </Link>
@@ -67,7 +66,7 @@ export const LandingPage: React.FC = () => {
               <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-xs text-muted-foreground">
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-                  <span>100% In-Memory Interactive Demo</span>
+                  <span>Interactive Live Preview</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Download className="h-4 w-4 text-primary" />
@@ -94,9 +93,9 @@ export const LandingPage: React.FC = () => {
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 text-[10px] font-semibold">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 text-[10px] font-semibold">
                       <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                      Live In-Memory State
+                      Live Preview
                     </span>
                   </div>
                 </div>

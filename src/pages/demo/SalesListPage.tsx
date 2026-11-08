@@ -16,7 +16,6 @@ import { SearchInput } from '@/components/common/SearchInput';
 import { StatusBadge } from '@/components/common/StatusBadge';
 import { ConfirmDeleteModal } from '@/components/modals/ConfirmDeleteModal';
 import { Button } from '@/components/ui/Button';
-import { Badge } from '@/components/ui/Badge';
 import { formatCurrency, formatDate } from '@/utils/formatters';
 
 const PAGE_SIZE = 10;
@@ -224,14 +223,9 @@ export const SalesListPage: React.FC = () => {
       {/* Top Banner & Quick KPI Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-border/60">
         <div>
-          <div className="flex items-center gap-2">
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
-              Sales & POS Engine
-            </h1>
-            <Badge variant="outline" className="text-[10px] uppercase font-bold rounded-full">
-              {sales.length} Total Records
-            </Badge>
-          </div>
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
+            Sales & Point of Sale
+          </h1>
           <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
             Commercial transaction ledger, customer invoices, and retail point-of-sale checkouts.
           </p>
@@ -382,7 +376,7 @@ export const SalesListPage: React.FC = () => {
           deleteTarget
             ? `Are you sure you want to delete sale ${deleteTarget.invoiceNumber} for ${deleteTarget.customerName} (${formatCurrency(
                 deleteTarget.grandTotal
-              )})? This will remove the record from current preview memory.`
+              )})? This will permanently remove the record from your ledger.`
             : undefined
         }
       />

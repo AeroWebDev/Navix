@@ -45,7 +45,7 @@ export const CustomerDetailPage: React.FC = () => {
         <AlertCircle className="h-12 w-12 text-rose-500 mx-auto" />
         <h2 className="text-xl font-bold text-foreground">Customer Not Found</h2>
         <p className="text-xs text-muted-foreground">
-          The requested customer could not be found in current in-memory records.
+          The requested customer could not be found in the active customer directory.
         </p>
         <Link to="/demo/customers">
           <Button variant="outline" size="sm" className="rounded-full px-5">
@@ -367,7 +367,7 @@ export const CustomerDetailPage: React.FC = () => {
                   {customerInvoices.map((inv) => (
                     <tr
                       key={inv.id}
-                      onClick={() => navigate(`/demo/invoices/${inv.id}`)}
+                      onClick={() => navigate(`/demo/invoices`)}
                       className="hover:bg-muted/30 transition-colors cursor-pointer"
                     >
                       <td className="py-3 font-mono font-bold text-accent hover:underline">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ShieldCheck, Menu, X, ArrowRight, Sparkles } from 'lucide-react';
+import { ShieldCheck, Menu, X, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/utils/cn';
 
@@ -27,12 +27,8 @@ export const Navbar: React.FC = () => {
             <ShieldCheck className="h-5 w-5" />
           </div>
           <div className="flex flex-col">
-            <span className="text-xl font-extrabold tracking-tight text-foreground flex items-center gap-2">
+            <span className="text-xl font-extrabold tracking-tight text-foreground">
               NAVIX
-              <span className="hidden sm:inline-flex items-center gap-1.5 text-[11px] font-medium text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                Live Demo
-              </span>
             </span>
           </div>
         </Link>
@@ -57,7 +53,6 @@ export const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center gap-3">
           <Link to="/custom-software">
             <Button variant="outline" size="sm" className="hidden lg:inline-flex">
-              <Sparkles className="h-3.5 w-3.5 mr-1.5 text-amber-500" />
               Request Software
             </Button>
           </Link>
@@ -118,7 +113,6 @@ export const Navbar: React.FC = () => {
           <div className="pt-2 border-t border-border flex flex-col gap-2">
             <Link to="/custom-software" onClick={() => setMobileMenuOpen(false)}>
               <Button variant="outline" className="w-full justify-center">
-                <Sparkles className="h-4 w-4 mr-1.5 text-amber-500" />
                 Request Custom Software
               </Button>
             </Link>

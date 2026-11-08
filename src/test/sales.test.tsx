@@ -27,10 +27,9 @@ describe('Phase 4: Sales Module Tests', () => {
       </SalesTestWrapper>
     );
 
-    expect(screen.getByText(/Sales & POS Engine/i)).toBeInTheDocument();
+    expect(screen.getByText(/Sales & Point of Sale/i)).toBeInTheDocument();
     expect(screen.getByText(/Active Sales Volume/i)).toBeInTheDocument();
     expect(screen.getByText(/New Sale POS/i)).toBeInTheDocument();
-    expect(screen.getByText(/40 Total Records/i)).toBeInTheDocument();
   });
 
   it('SALE-002: Search filters sales results in real-time', async () => {

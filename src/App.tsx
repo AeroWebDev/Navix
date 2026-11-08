@@ -360,7 +360,7 @@ export const App: React.FC = () => {
               element={
                 <ProtectedRoute requiredPermission="accounting">
                   <DemoModulePlaceholder
-                    title="Accounting Statements (Demo)"
+                    title="Accounting Statements & General Ledger"
                     moduleKey="General Ledger"
                     description="Simplified general ledger, balance summaries, and financial audit logs."
                     features={[

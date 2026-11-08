@@ -34,7 +34,7 @@ export const SaleDetailPage: React.FC = () => {
         <AlertCircle className="h-12 w-12 text-rose-500 mx-auto" />
         <h2 className="text-xl font-bold text-foreground">Sale Transaction Not Found</h2>
         <p className="text-xs text-muted-foreground">
-          The requested sales transaction could not be located in current in-memory preview state.
+          The requested sales transaction could not be located in records.
         </p>
         <Link to="/demo/sales">
           <Button variant="outline" size="sm" className="rounded-full px-5">

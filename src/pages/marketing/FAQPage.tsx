@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, ChevronDown, Sparkles, HelpCircle } from 'lucide-react';
+import { Search, ChevronDown, HelpCircle } from 'lucide-react';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
@@ -199,8 +199,7 @@ export const FAQPage: React.FC = () => {
             </Button>
           </Link>
           <Link to="/custom-software">
-            <Button size="sm" className="gap-1.5">
-              <Sparkles className="h-3.5 w-3.5 text-amber-500" />
+            <Button size="sm">
               Request Custom Software
             </Button>
           </Link>

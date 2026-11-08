@@ -235,14 +235,9 @@ export const SuppliersListPage: React.FC = () => {
       {/* Top Banner & Action */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-border/60">
         <div>
-          <div className="flex items-center gap-2">
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
-              Supplier & Vendor Directory
-            </h1>
-            <Badge variant="outline" className="rounded-full px-2.5 py-0.5 text-xs font-semibold">
-              Procurement Desk
-            </Badge>
-          </div>
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
+            Supplier & Vendor Directory
+          </h1>
           <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
             Manage vendor catalogue contracts, purchasing accounts, payment terms, and accounts payable.
           </p>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 import { useCustomers } from '@/hooks/useCustomers';
 import { CustomerForm } from '@/components/forms/CustomerForm';
 import { Customer } from '@/types/customer';
@@ -55,11 +55,6 @@ export const NewCustomerPage: React.FC = () => {
           <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
             Configure contact parameters, corporate tax IDs, client classification, and billing addresses.
           </p>
-        </div>
-
-        <div className="flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-500/20">
-          <Sparkles className="h-4 w-4" />
-          <span>CRM & Ledger Sync</span>
         </div>
       </div>
 

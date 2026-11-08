@@ -9,7 +9,7 @@ import {
   ChevronDown,
   UserCheck,
   ExternalLink,
-  Sparkles,
+  CheckCircle2,
 } from 'lucide-react';
 import { useAuth, DEMO_ACCOUNTS } from '@/context/AuthContext';
 import { Button } from '@/components/ui/Button';
@@ -71,9 +71,6 @@ export const TopBar: React.FC<TopBarProps> = ({
           <h1 className="text-base sm:text-lg font-extrabold text-foreground capitalize tracking-tight">
             {getPageTitle()}
           </h1>
-          <Badge variant="outline" className="hidden sm:inline-flex text-[10px] uppercase font-bold rounded-full">
-            Demo
-          </Badge>
         </div>
       </div>
 
@@ -137,9 +134,9 @@ export const TopBar: React.FC<TopBarProps> = ({
 
         {/* Reset feedback toast indicator */}
         {resetToast && (
-          <div className="fixed top-20 right-6 z-50 p-3 rounded-lg bg-emerald-600 text-white text-xs font-semibold shadow-lg flex items-center gap-2 animate-in fade-in slide-in-from-top-2">
-            <Sparkles className="h-4 w-4" />
-            <span>In-memory state reset to baseline!</span>
+          <div className="fixed top-20 right-6 z-50 p-3 rounded-xl bg-emerald-600 text-white text-xs font-semibold shadow-lg flex items-center gap-2 animate-in fade-in slide-in-from-top-2">
+            <CheckCircle2 className="h-4 w-4" />
+            <span>Data reset to baseline!</span>
           </div>
         )}
 

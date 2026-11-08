@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 import { usePurchases } from '@/hooks/usePurchases';
 import { PurchaseForm } from '@/components/forms/PurchaseForm';
 import { Purchase } from '@/types/purchase';
@@ -57,11 +57,6 @@ export const NewPurchasePage: React.FC = () => {
           <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
             Procure inventory from authorized suppliers, track order fulfillment, and update stock.
           </p>
-        </div>
-
-        <div className="flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-500/20">
-          <Sparkles className="h-4 w-4" />
-          <span>Live In-Memory Inventory Sync</span>
         </div>
       </div>
 

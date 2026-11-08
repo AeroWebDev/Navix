@@ -37,7 +37,7 @@ export const SupplierDetailPage: React.FC = () => {
         <AlertCircle className="h-12 w-12 text-rose-500 mx-auto" />
         <h2 className="text-xl font-bold text-foreground">Supplier Not Found</h2>
         <p className="text-xs text-muted-foreground">
-          The requested vendor record could not be found in current in-memory records.
+          The requested vendor record could not be found in the directory.
         </p>
         <Link to="/demo/suppliers">
           <Button variant="outline" size="sm" className="rounded-full px-5">

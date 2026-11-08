@@ -9,7 +9,6 @@ import {
   CheckCircle2,
   KeyRound,
   AlertCircle,
-  Sparkles,
 } from 'lucide-react';
 import { useAuth, DEMO_ACCOUNTS } from '@/context/AuthContext';
 import { Button } from '@/components/ui/Button';
@@ -57,16 +56,11 @@ export const DemoLoginPage: React.FC = () => {
 
         <div>
           <h1 className="text-2xl font-extrabold text-foreground tracking-tight">
-            Role-Based Demo Access Portal
+            Role-Based Access Portal
           </h1>
           <p className="mt-1 text-xs text-muted-foreground max-w-sm mx-auto">
-            Experience realistic ERP permissions. Select a staff role below or enter demo credentials to begin.
+            Experience realistic ERP permissions. Select a staff role below or enter credentials to sign in.
           </p>
-        </div>
-
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-[11px] font-medium text-amber-700 dark:text-amber-400">
-          <Sparkles className="h-3.5 w-3.5 shrink-0" />
-          <span>Interactive Preview: All changes stay in memory and are never saved</span>
         </div>
       </div>
 

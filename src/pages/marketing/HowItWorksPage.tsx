@@ -7,7 +7,6 @@ import {
   Rocket,
   CheckCircle2,
   ArrowRight,
-  Sparkles,
   Server,
   Cloud,
 } from 'lucide-react';
@@ -179,8 +178,7 @@ export const HowItWorksPage: React.FC = () => {
             </Button>
           </Link>
           <Link to="/custom-software">
-            <Button variant="outline" size="lg" className="gap-2">
-              <Sparkles className="h-4 w-4 text-amber-500" />
+            <Button variant="outline" size="lg">
               Request Custom Software
             </Button>
           </Link>
