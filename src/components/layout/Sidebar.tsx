@@ -18,6 +18,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Lock,
+  Sparkles,
 } from 'lucide-react';
 import { NavixLogo } from '@/components/common/NavixLogo';
 import { useAuth } from '@/context/AuthContext';
@@ -220,6 +221,26 @@ export const Sidebar: React.FC<SidebarProps> = ({
             );
           })}
         </div>
+
+        {/* Upgrade / Custom Build Card inspired by reference design */}
+        {!isCollapsed && (
+          <div className="mx-3 my-2 p-3.5 rounded-2xl bg-gradient-to-br from-[#172A3A] via-[#1E394E] to-[#263238] text-white space-y-2 relative overflow-hidden shadow-sm">
+            <div className="flex items-center gap-2">
+              <div className="h-6 w-6 rounded-lg bg-white/10 flex items-center justify-center">
+                <Sparkles className="h-3.5 w-3.5 text-emerald-400" />
+              </div>
+              <p className="text-xs font-bold">Custom Build</p>
+            </div>
+            <p className="text-[11px] text-white/70 leading-snug">
+              Get an enterprise ERP built around your exact business rules.
+            </p>
+            <Link to="/custom-software" onClick={onCloseMobile} className="block pt-0.5">
+              <button className="w-full py-1.5 px-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold transition-all shadow-xs cursor-pointer">
+                Request Quote →
+              </button>
+            </Link>
+          </div>
+        )}
 
         {/* Bottom User & Role Indicator */}
         <div className="p-3 border-t border-border/60 bg-muted/20">

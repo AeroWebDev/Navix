@@ -20,6 +20,8 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { formatCurrency, formatDate } from '@/utils/formatters';
+import { ProductStatisticsCard } from '@/components/dashboard/ProductStatisticsCard';
+import { CustomerGrowthCard } from '@/components/dashboard/CustomerGrowthCard';
 
 export const DashboardPage: React.FC = () => {
   const { sales, expenses, invoices, products, customers, suppliers } = useDemoData();
@@ -140,6 +142,7 @@ export const DashboardPage: React.FC = () => {
           icon={<DollarSign className="h-5 w-5" />}
           trend={{ value: '+14.2%', isPositive: true, period: 'vs last month' }}
           subtitle={`${sales.length} transactions completed`}
+          highlighted={true}
         />
 
         <StatCard
@@ -171,185 +174,188 @@ export const DashboardPage: React.FC = () => {
         />
       </div>
 
-      {/* Executive Treasury & Highlights Row inspired by reference design */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Corporate Treasury VISA Card (Col 4) */}
-        <div className="lg:col-span-4 flex flex-col justify-between p-6 rounded-3xl bg-gradient-to-br from-[#172A3A] via-[#1F3A4D] to-[#2E8B70] text-white shadow-soft-island relative overflow-hidden">
-          {/* Card background glowing orb */}
-          <div className="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-white/5 blur-2xl pointer-events-none" />
-
-          <div>
-            <div className="flex items-center justify-between">
-              <span className="text-sm font-extrabold tracking-widest text-white/90">VISA</span>
-              <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-white/10 text-white/90 backdrop-blur-sm">
-                Corporate Treasury
-              </span>
-            </div>
-            <p className="text-xs text-white/70 mt-4 font-medium">Available Working Capital</p>
-            <p className="text-3xl font-extrabold tracking-tight mt-1">
-              $78,989.09
-            </p>
-          </div>
-
-          <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-white/80">
-            <div className="font-mono tracking-wider">•••• 9090</div>
-            <div className="text-[11px] font-medium">EXP 09/28</div>
-          </div>
-
-          <div className="mt-4 flex items-center gap-2">
-            <Link to="/demo/sales" className="flex-1">
-              <button className="w-full py-2 px-3 rounded-full bg-white text-[#172A3A] text-xs font-bold hover:bg-white/90 transition-all cursor-pointer shadow-xs">
-                Send Inflow ↑
-              </button>
-            </Link>
-            <Link to="/demo/expenses" className="flex-1">
-              <button className="w-full py-2 px-3 rounded-full bg-white/15 text-white text-xs font-bold hover:bg-white/25 transition-all cursor-pointer">
-                Disburse ↓
-              </button>
-            </Link>
-          </div>
-        </div>
-
-        {/* Monthly Revenue vs Expenses Chart (Col 8) */}
-        <Card className="lg:col-span-8 shadow-soft-island border-border/60">
-          <CardHeader className="flex flex-row items-center justify-between pb-2 border-b border-border/50">
-            <div>
-              <CardTitle className="text-base font-bold text-foreground">
-                Revenue & Operating Cash Flow (Q1 2025)
-              </CardTitle>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                Monthly gross billings compared to total commercial expenditures.
-              </p>
-            </div>
-            <Badge variant="outline" className="text-[10px] uppercase font-bold rounded-full">
-              Q1 Financials
-            </Badge>
-          </CardHeader>
-          <CardContent className="pt-4">
-            <RevenueChart data={monthlyData} height={260} />
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Secondary Quick Metrics Row */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div className="p-4 rounded-2xl border border-border/60 bg-card flex items-center gap-3 shadow-soft-island">
-          <div className="h-9 w-9 rounded-2xl bg-blue-500/10 text-blue-600 flex items-center justify-center shrink-0">
-            <Boxes className="h-4 w-4" />
-          </div>
-          <div>
-            <p className="text-[11px] text-muted-foreground font-semibold">Catalog SKUs</p>
-            <p className="text-base font-extrabold text-foreground">{products.length} Products</p>
-          </div>
-        </div>
-
-        <div className="p-4 rounded-2xl border border-border/60 bg-card flex items-center gap-3 shadow-soft-island">
-          <div className="h-9 w-9 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0">
-            <Users className="h-4 w-4" />
-          </div>
-          <div>
-            <p className="text-[11px] text-muted-foreground font-semibold">Active Clients</p>
-            <p className="text-base font-extrabold text-foreground">{customers.length} Customers</p>
-          </div>
-        </div>
-
-        <div className="p-4 rounded-2xl border border-border/60 bg-card flex items-center gap-3 shadow-soft-island">
-          <div className="h-9 w-9 rounded-2xl bg-purple-500/10 text-purple-600 flex items-center justify-center shrink-0">
-            <Building2 className="h-4 w-4" />
-          </div>
-          <div>
-            <p className="text-[11px] text-muted-foreground font-semibold">Approved Suppliers</p>
-            <p className="text-base font-extrabold text-foreground">{suppliers.length} Vendors</p>
-          </div>
-        </div>
-
-        <div className="p-4 rounded-2xl border border-border/60 bg-card flex items-center gap-3 shadow-soft-island">
-          <div className="h-9 w-9 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0">
-            <AlertTriangle className="h-4 w-4" />
-          </div>
-          <div>
-            <p className="text-[11px] text-muted-foreground font-semibold">Low Stock Alerts</p>
-            <p className="text-base font-extrabold text-amber-600 dark:text-amber-400">
-              {lowStockProducts.length} Below Min
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Expense Category Breakdown Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <Card className="lg:col-span-12 shadow-soft-island border-border/60">
-          <CardHeader className="flex flex-row items-center justify-between pb-2 border-b border-border/50">
-            <div>
-              <CardTitle className="text-base font-bold text-foreground">
-                Operating Cost Distribution & Expense Breakdown
-              </CardTitle>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                Breakdown across operating cost centers and vendor allocations.
-              </p>
-            </div>
-          </CardHeader>
-          <CardContent className="pt-4">
-            <ExpensePieChart data={categoryData} height={280} />
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Tables Section: Recent Transactions & Invoices & Low Stock */}
+      {/* Main Multi-Column Section Inspired by Reference Assets */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        {/* Recent Sales Ledger (Col 6) */}
-        <Card className="lg:col-span-6 rounded-3xl shadow-soft-island border-border/60 overflow-hidden">
-          <CardHeader className="flex flex-row items-center justify-between pb-3 border-b border-border/70">
-            <div className="flex items-center gap-2">
-              <ShoppingCart className="h-4 w-4 text-primary" />
-              <CardTitle className="text-sm font-bold text-foreground">
-                Recent Sales Transactions
-              </CardTitle>
-            </div>
-            <Link
-              to="/demo/sales"
-              className="text-xs font-semibold text-primary hover:underline flex items-center gap-1"
-            >
-              View All Sales
-              <ArrowUpRight className="h-3 w-3" />
-            </Link>
-          </CardHeader>
-          <CardContent className="p-0">
-            <div className="divide-y divide-border text-xs">
-              {recentSales.map((sale) => (
-                <div
-                  key={sale.id}
-                  className="p-3.5 flex items-center justify-between hover:bg-muted/30 transition-colors"
-                >
-                  <div className="space-y-0.5">
-                    <p className="font-bold text-foreground">{sale.invoiceNumber}</p>
-                    <p className="text-[11px] text-muted-foreground">
-                      {sale.customerName} • {formatDate(sale.date)}
-                    </p>
-                  </div>
-                  <div className="text-right space-y-1">
-                    <p className="font-bold text-foreground">{formatCurrency(sale.grandTotal)}</p>
-                    <Badge
-                      variant={
-                        sale.paymentStatus === 'paid'
-                          ? 'success'
-                          : sale.paymentStatus === 'pending'
-                          ? 'warning'
-                          : 'destructive'
-                      }
-                      className="text-[9px] uppercase font-semibold"
-                    >
-                      {sale.paymentStatus}
-                    </Badge>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+        {/* Left / Center Column (8 cols) */}
+        <div className="lg:col-span-8 space-y-6">
+          {/* Monthly Revenue vs Expenses Chart */}
+          <Card className="shadow-soft-island border-border/60">
+            <CardHeader className="flex flex-row items-center justify-between pb-2 border-b border-border/50">
+              <div>
+                <CardTitle className="text-base font-bold text-foreground">
+                  Revenue & Operating Cash Flow (Q1 2025)
+                </CardTitle>
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  Monthly gross billings compared to total commercial expenditures.
+                </p>
+              </div>
+              <Badge variant="outline" className="text-[10px] uppercase font-bold rounded-full">
+                Q1 Financials
+              </Badge>
+            </CardHeader>
+            <CardContent className="pt-4">
+              <RevenueChart data={monthlyData} height={280} />
+            </CardContent>
+          </Card>
 
-        {/* Recent Invoices & Low Stock Column (Col 6) */}
-        <div className="lg:col-span-6 space-y-6">
+          {/* Quick Metrics Island */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div className="p-4 rounded-2xl border border-border/60 bg-card flex items-center gap-3 shadow-soft-island">
+              <div className="h-9 w-9 rounded-2xl bg-blue-500/10 text-blue-600 flex items-center justify-center shrink-0">
+                <Boxes className="h-4 w-4" />
+              </div>
+              <div>
+                <p className="text-[11px] text-muted-foreground font-semibold">Catalog SKUs</p>
+                <p className="text-base font-extrabold text-foreground">{products.length} Products</p>
+              </div>
+            </div>
+
+            <div className="p-4 rounded-2xl border border-border/60 bg-card flex items-center gap-3 shadow-soft-island">
+              <div className="h-9 w-9 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0">
+                <Users className="h-4 w-4" />
+              </div>
+              <div>
+                <p className="text-[11px] text-muted-foreground font-semibold">Active Clients</p>
+                <p className="text-base font-extrabold text-foreground">{customers.length} Customers</p>
+              </div>
+            </div>
+
+            <div className="p-4 rounded-2xl border border-border/60 bg-card flex items-center gap-3 shadow-soft-island">
+              <div className="h-9 w-9 rounded-2xl bg-purple-500/10 text-purple-600 flex items-center justify-center shrink-0">
+                <Building2 className="h-4 w-4" />
+              </div>
+              <div>
+                <p className="text-[11px] text-muted-foreground font-semibold">Approved Suppliers</p>
+                <p className="text-base font-extrabold text-foreground">{suppliers.length} Vendors</p>
+              </div>
+            </div>
+
+            <div className="p-4 rounded-2xl border border-border/60 bg-card flex items-center gap-3 shadow-soft-island">
+              <div className="h-9 w-9 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0">
+                <AlertTriangle className="h-4 w-4" />
+              </div>
+              <div>
+                <p className="text-[11px] text-muted-foreground font-semibold">Low Stock Alerts</p>
+                <p className="text-base font-extrabold text-amber-600 dark:text-amber-400">
+                  {lowStockProducts.length} Below Min
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Operating Cost Distribution & Expense Breakdown */}
+          <Card className="shadow-soft-island border-border/60">
+            <CardHeader className="flex flex-row items-center justify-between pb-2 border-b border-border/50">
+              <div>
+                <CardTitle className="text-base font-bold text-foreground">
+                  Operating Cost Distribution & Expense Breakdown
+                </CardTitle>
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  Breakdown across operating cost centers and vendor allocations.
+                </p>
+              </div>
+            </CardHeader>
+            <CardContent className="pt-4">
+              <ExpensePieChart data={categoryData} height={260} />
+            </CardContent>
+          </Card>
+
+          {/* Recent Sales Ledger */}
+          <Card className="rounded-3xl shadow-soft-island border-border/60 overflow-hidden">
+            <CardHeader className="flex flex-row items-center justify-between pb-3 border-b border-border/70">
+              <div className="flex items-center gap-2">
+                <ShoppingCart className="h-4 w-4 text-primary" />
+                <CardTitle className="text-sm font-bold text-foreground">
+                  Recent Sales Transactions
+                </CardTitle>
+              </div>
+              <Link
+                to="/demo/sales"
+                className="text-xs font-semibold text-primary hover:underline flex items-center gap-1"
+              >
+                View All Sales
+                <ArrowUpRight className="h-3 w-3" />
+              </Link>
+            </CardHeader>
+            <CardContent className="p-0">
+              <div className="divide-y divide-border text-xs">
+                {recentSales.map((sale) => (
+                  <div
+                    key={sale.id}
+                    className="p-3.5 flex items-center justify-between hover:bg-muted/30 transition-colors"
+                  >
+                    <div className="space-y-0.5">
+                      <p className="font-bold text-foreground">{sale.invoiceNumber}</p>
+                      <p className="text-[11px] text-muted-foreground">
+                        {sale.customerName} • {formatDate(sale.date)}
+                      </p>
+                    </div>
+                    <div className="text-right space-y-1">
+                      <p className="font-bold text-foreground">{formatCurrency(sale.grandTotal)}</p>
+                      <Badge
+                        variant={
+                          sale.paymentStatus === 'paid'
+                            ? 'success'
+                            : sale.paymentStatus === 'pending'
+                            ? 'warning'
+                            : 'destructive'
+                        }
+                        className="text-[9px] uppercase font-semibold"
+                      >
+                        {sale.paymentStatus}
+                      </Badge>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Right Column (4 cols) - Inspired by Reference Assets */}
+        <div className="lg:col-span-4 space-y-6">
+          {/* Corporate Treasury VISA Card */}
+          <div className="flex flex-col justify-between p-6 rounded-3xl bg-gradient-to-br from-[#172A3A] via-[#1F3A4D] to-[#2E8B70] text-white shadow-soft-island relative overflow-hidden">
+            <div className="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-white/5 blur-2xl pointer-events-none" />
+
+            <div>
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-extrabold tracking-widest text-white/90">VISA</span>
+                <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-white/10 text-white/90 backdrop-blur-sm">
+                  Corporate Treasury
+                </span>
+              </div>
+              <p className="text-xs text-white/70 mt-4 font-medium">Available Working Capital</p>
+              <p className="text-3xl font-extrabold tracking-tight mt-1">
+                $78,989.09
+              </p>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-white/80">
+              <div className="font-mono tracking-wider">•••• 9090</div>
+              <div className="text-[11px] font-medium">EXP 09/28</div>
+            </div>
+
+            <div className="mt-4 flex items-center gap-2">
+              <Link to="/demo/sales" className="flex-1">
+                <button className="w-full py-2 px-3 rounded-full bg-white text-[#172A3A] text-xs font-bold hover:bg-white/90 transition-all cursor-pointer shadow-xs">
+                  Send Inflow ↑
+                </button>
+              </Link>
+              <Link to="/demo/expenses" className="flex-1">
+                <button className="w-full py-2 px-3 rounded-full bg-white/15 text-white text-xs font-bold hover:bg-white/25 transition-all cursor-pointer">
+                  Disburse ↓
+                </button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Product Statistics Card with Concentric Radial Rings */}
+          <ProductStatisticsCard />
+
+          {/* Customer Growth Card with Locations */}
+          <CustomerGrowthCard />
+
           {/* Recent Invoices Mini Table */}
           <Card className="rounded-3xl shadow-soft-island border-border/60 overflow-hidden">
             <CardHeader className="flex flex-row items-center justify-between pb-3 border-b border-border/70">
