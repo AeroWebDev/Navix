@@ -4,24 +4,24 @@
 
 @layer base {
   :root {
-    /* NAVIX Official Light Mode System */
-    --background: 39 44% 94%; /* Warm Ivory #F6F1E8 */
-    --foreground: 200 19% 18%; /* Charcoal #263238 */
+    /* NAVIX Modern Clean Bright System */
+    --background: 0 0% 99%; /* Clean Modern Crisp White */
+    --foreground: 222 47% 11%; /* Deep Charcoal Navy */
 
-    --card: 0 0% 100%; /* Clean Elevated Surface */
-    --card-foreground: 200 19% 18%;
+    --card: 0 0% 100%; /* Pure White */
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 200 19% 18%;
+    --popover-foreground: 222 47% 11%;
 
     --primary: 208 43% 16%; /* Deep Navy #172A3A */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 120 3% 90%; /* Soft Gray #E5E7E5 */
-    --secondary-foreground: 200 19% 18%;
+    --secondary: 210 20% 96%; /* Clean Subtle Slate Gray */
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 40 18% 90%;
-    --muted-foreground: 200 12% 44%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
 
     --accent: 163 50% 36%; /* Emerald #2E8B70 */
     --accent-foreground: 0 0% 100%;
@@ -29,8 +29,8 @@
     --destructive: 0 52% 50%; /* Burgundy/Loss #B54848 */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 120 5% 88%;
-    --input: 120 5% 88%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
     --ring: 163 50% 36%; /* Emerald Ring */
 
     --radius: 1.25rem; /* Rounded 20px modern radius */
