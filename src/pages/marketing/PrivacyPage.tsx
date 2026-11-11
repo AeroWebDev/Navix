@@ -64,8 +64,8 @@ export const PrivacyPage: React.FC = () => {
           <h2 className="text-lg font-bold text-foreground">4. Contacting Data Governance</h2>
           <p>
             If you have questions regarding data privacy, security architecture, or custom encryption compliance (e.g., GDPR, HIPAA, or regional data sovereignty), contact our engineering compliance officer at{' '}
-            <a href="mailto:privacy@navix.demo" className="text-primary hover:underline">
-              privacy@navix.demo
+            <a href="mailto:aeroteam.agency@gmail.com" className="text-primary hover:underline">
+              aeroteam.agency@gmail.com
             </a>.
           </p>
         </section>

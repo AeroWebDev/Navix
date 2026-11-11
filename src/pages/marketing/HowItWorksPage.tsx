@@ -13,6 +13,7 @@ import {
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
+import { ScrollReveal } from '@/components/common/ScrollReveal';
 
 export const HowItWorksPage: React.FC = () => {
   const steps = [
@@ -84,45 +85,46 @@ export const HowItWorksPage: React.FC = () => {
       {/* Steps Vertical Timeline */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {steps.map((step, idx) => (
-          <div
-            key={idx}
-            className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start p-6 sm:p-8 rounded-2xl border border-border bg-card shadow-sm"
-          >
-            {/* Number Column */}
-            <div className="md:col-span-3 space-y-2">
-              <span className="text-4xl sm:text-5xl font-black text-primary/30 tracking-tight">
-                {step.number}
-              </span>
-              <p className="text-xs font-bold uppercase tracking-wider text-primary">
-                {step.tagline}
-              </p>
-              <div className="pt-2">
-                <div className="h-10 w-10 rounded-lg bg-muted flex items-center justify-center">
-                  {step.icon}
-                </div>
-              </div>
-            </div>
-
-            {/* Description & Deliverables */}
-            <div className="md:col-span-9 space-y-4">
-              <h3 className="text-2xl font-bold text-foreground">{step.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-
-              <div className="pt-2 border-t border-border space-y-2">
-                <p className="text-xs font-bold text-foreground uppercase tracking-wider">
-                  Deliverables in this stage:
+          <ScrollReveal key={idx} delay={idx * 100}>
+            <div
+              className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start p-6 sm:p-8 rounded-2xl border border-border bg-card shadow-sm hover:border-accent/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300"
+            >
+              {/* Number Column */}
+              <div className="md:col-span-3 space-y-2">
+                <span className="text-4xl sm:text-5xl font-black text-primary/30 tracking-tight">
+                  {step.number}
+                </span>
+                <p className="text-xs font-bold uppercase tracking-wider text-primary">
+                  {step.tagline}
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {step.deliverables.map((item, i) => (
-                    <div key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
+                <div className="pt-2">
+                  <div className="h-10 w-10 rounded-lg bg-muted flex items-center justify-center">
+                    {step.icon}
+                  </div>
+                </div>
+              </div>
+
+              {/* Description & Deliverables */}
+              <div className="md:col-span-9 space-y-4">
+                <h3 className="text-2xl font-bold text-foreground">{step.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+
+                <div className="pt-2 border-t border-border space-y-2">
+                  <p className="text-xs font-bold text-foreground uppercase tracking-wider">
+                    Deliverables in this stage:
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {step.deliverables.map((item, i) => (
+                      <div key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
+                        <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         ))}
       </div>
 

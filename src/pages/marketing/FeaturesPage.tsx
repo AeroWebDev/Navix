@@ -15,6 +15,7 @@ import {
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
+import { ScrollReveal } from '@/components/common/ScrollReveal';
 
 export const FeaturesPage: React.FC = () => {
   const modules = [
@@ -159,46 +160,48 @@ export const FeaturesPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {modules.map((m, idx) => (
-            <Card key={idx} className="flex flex-col justify-between hover:border-primary/50 transition-colors">
-              <CardContent className="p-6 space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="h-12 w-12 rounded-xl bg-muted/60 flex items-center justify-center">
-                    {m.icon}
+            <ScrollReveal key={idx} delay={(idx % 3) * 100}>
+              <Card className="flex flex-col justify-between hover:border-accent/40 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 h-full">
+                <CardContent className="p-6 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="h-12 w-12 rounded-xl bg-muted/60 flex items-center justify-center">
+                      {m.icon}
+                    </div>
+                    <Badge variant="secondary" className="text-xs">
+                      {m.badge}
+                    </Badge>
                   </div>
-                  <Badge variant="secondary" className="text-xs">
-                    {m.badge}
-                  </Badge>
-                </div>
 
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-foreground">{m.title}</h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{m.description}</p>
-                </div>
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-bold text-foreground">{m.title}</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{m.description}</p>
+                  </div>
 
-                <div className="space-y-2 pt-2 border-t border-border">
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-foreground">
-                    Key Capabilities:
-                  </p>
-                  <ul className="space-y-1.5">
-                    {m.capabilities.map((c, i) => (
-                      <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
-                        <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0 mt-0.5" />
-                        <span>{c}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </CardContent>
+                  <div className="space-y-2 pt-2 border-t border-border">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-foreground">
+                      Key Capabilities:
+                    </p>
+                    <ul className="space-y-1.5">
+                      {m.capabilities.map((c, i) => (
+                        <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
+                          <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0 mt-0.5" />
+                          <span>{c}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </CardContent>
 
-              <div className="p-6 pt-0">
-                <Link to={m.link}>
-                  <Button variant="outline" size="sm" className="w-full gap-1.5 text-xs font-semibold justify-center">
-                    Test in Interactive Demo
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </Button>
-                </Link>
-              </div>
-            </Card>
+                <div className="p-6 pt-0">
+                  <Link to={m.link}>
+                    <Button variant="outline" size="sm" className="w-full gap-1.5 text-xs font-semibold justify-center hover:border-accent/40 hover:bg-accent/5">
+                      Test in Interactive Demo
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </Button>
+                  </Link>
+                </div>
+              </Card>
+            </ScrollReveal>
           ))}
         </div>
       </div>

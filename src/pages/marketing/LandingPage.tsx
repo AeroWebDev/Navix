@@ -20,6 +20,34 @@ import {
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
+import { ScrollReveal } from '@/components/common/ScrollReveal';
+
+const testimonials = [
+  {
+    quote:
+      'NAVIX allowed us to completely replace three disconnected spreadsheets. The real-time low-stock alerts alone saved us tens of thousands in lost sales.',
+    author: 'Tariq Al-Mansoor',
+    role: 'Managing Director, Al-Mansoor Retail Group',
+    industry: 'Retail & Distribution (5 Branches)',
+    metric: 'Cut daily audit time by 75%',
+  },
+  {
+    quote:
+      'Having a system customized specifically for our service business without paying enterprise ERP fees changed our cash flow overnight. Highly recommended.',
+    author: 'Elena Rostova',
+    role: 'Founder & CEO, Horizon Engineering Services',
+    industry: 'Consulting & Technical Services',
+    metric: 'Saved $14,000/yr in SaaS seats',
+  },
+  {
+    quote:
+      'The role-based cashier layout made training new staff take less than 15 minutes. It is fast, clean, and our daily reconciliation is finally stress-free.',
+    author: 'Marcus Vance',
+    role: 'Operations Lead, Urban Pulse Logistics',
+    industry: 'Logistics & Warehousing',
+    metric: '100% offline warehouse uptime',
+  },
+];
 
 export const LandingPage: React.FC = () => {
   return (
@@ -75,7 +103,8 @@ export const LandingPage: React.FC = () => {
 
             {/* Right Column: Realistic Application Window Preview */}
             <div className="lg:col-span-6 relative">
-              <div className="relative mx-auto max-w-xl lg:max-w-none rounded-2xl border border-zinc-200/90 dark:border-zinc-800 bg-card shadow-2xl shadow-zinc-950/10 overflow-hidden ring-1 ring-zinc-950/5">
+              <div className="absolute -inset-2 bg-gradient-to-tr from-emerald-500/25 via-teal-500/15 to-transparent rounded-3xl blur-2xl -z-10 animate-float-slow pointer-events-none" />
+              <div className="relative mx-auto max-w-xl lg:max-w-none rounded-2xl border border-zinc-200/90 dark:border-zinc-800 bg-card shadow-2xl shadow-emerald-950/10 overflow-hidden ring-1 ring-zinc-950/5">
                 {/* Simulated macOS / Desktop App Window Header */}
                 <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-muted/40">
                   <div className="flex items-center gap-2">
@@ -206,151 +235,165 @@ export const LandingPage: React.FC = () => {
       {/* Feature Highlights Section */}
       <section className="py-20 bg-background border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-            <Badge variant="default" className="text-xs uppercase">
-              Modular Capabilities
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
-              Engineered for Real Commercial Workflows
-            </h2>
-            <p className="text-muted-foreground text-base sm:text-lg">
-              Explore the fourteen interconnected modules that make up the NAVIX architecture.
-            </p>
-          </div>
+          <ScrollReveal direction="up">
+            <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+              <Badge variant="default" className="text-xs uppercase">
+                Modular Capabilities
+              </Badge>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
+                Engineered for Real Commercial Workflows
+              </h2>
+              <p className="text-muted-foreground text-base sm:text-lg">
+                Explore the fourteen interconnected modules that make up the NAVIX architecture.
+              </p>
+            </div>
+          </ScrollReveal>
 
           {/* Asymmetrical High-Craft Feature Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Feature 1 - Sales & Invoicing */}
-            <Card className="hover:border-primary/50 transition-all shadow-xs">
-              <CardContent className="p-6 space-y-4">
-                <div className="h-10 w-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center">
-                  <Receipt className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-foreground">Sales & Smart Invoicing</h3>
-                  <p className="text-xs text-muted-foreground mt-1">Point-of-sale & billing engine</p>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Generate professional tax invoices, calculate discounts, manage payment statuses, and trigger clean print views with one click.
-                </p>
-                <div className="pt-2 flex flex-wrap gap-1.5 text-[11px] text-muted-foreground font-medium">
-                  <span className="px-2 py-0.5 rounded bg-muted">Fast POS Mode</span>
-                  <span className="px-2 py-0.5 rounded bg-muted">Line Discounts</span>
-                  <span className="px-2 py-0.5 rounded bg-muted">Printable Invoices</span>
-                </div>
-              </CardContent>
-            </Card>
+            <ScrollReveal delay={50}>
+              <Card className="hover:border-accent/40 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 shadow-xs h-full">
+                <CardContent className="p-6 space-y-4">
+                  <div className="h-10 w-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center">
+                    <Receipt className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground">Sales & Smart Invoicing</h3>
+                    <p className="text-xs text-muted-foreground mt-1">Point-of-sale & billing engine</p>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Generate professional tax invoices, calculate discounts, manage payment statuses, and trigger clean print views with one click.
+                  </p>
+                  <div className="pt-2 flex flex-wrap gap-1.5 text-[11px] text-muted-foreground font-medium">
+                    <span className="px-2 py-0.5 rounded bg-muted">Fast POS Mode</span>
+                    <span className="px-2 py-0.5 rounded bg-muted">Line Discounts</span>
+                    <span className="px-2 py-0.5 rounded bg-muted">Printable Invoices</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
 
             {/* Feature 2 - Inventory */}
-            <Card className="hover:border-primary/50 transition-all shadow-xs">
-              <CardContent className="p-6 space-y-4">
-                <div className="h-10 w-10 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center">
-                  <Boxes className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-foreground">Real-Time Inventory</h3>
-                  <p className="text-xs text-muted-foreground mt-1">Catalog & warehouse tracking</p>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Track catalog stock quantities, set automated minimum stock thresholds, prevent stockouts, and audit batch adjustments.
-                </p>
-                <div className="pt-2 flex flex-wrap gap-1.5 text-[11px] text-muted-foreground font-medium">
-                  <span className="px-2 py-0.5 rounded bg-muted">SKU Management</span>
-                  <span className="px-2 py-0.5 rounded bg-muted">Low Stock Alerts</span>
-                  <span className="px-2 py-0.5 rounded bg-muted">Audit Logs</span>
-                </div>
-              </CardContent>
-            </Card>
+            <ScrollReveal delay={100}>
+              <Card className="hover:border-accent/40 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 shadow-xs h-full">
+                <CardContent className="p-6 space-y-4">
+                  <div className="h-10 w-10 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center">
+                    <Boxes className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground">Real-Time Inventory</h3>
+                    <p className="text-xs text-muted-foreground mt-1">Catalog & warehouse tracking</p>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Track catalog stock quantities, set automated minimum stock thresholds, prevent stockouts, and audit batch adjustments.
+                  </p>
+                  <div className="pt-2 flex flex-wrap gap-1.5 text-[11px] text-muted-foreground font-medium">
+                    <span className="px-2 py-0.5 rounded bg-muted">SKU Management</span>
+                    <span className="px-2 py-0.5 rounded bg-muted">Low Stock Alerts</span>
+                    <span className="px-2 py-0.5 rounded bg-muted">Audit Logs</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
 
             {/* Feature 3 - Expenses */}
-            <Card className="hover:border-primary/50 transition-all shadow-xs">
-              <CardContent className="p-6 space-y-4">
-                <div className="h-10 w-10 rounded-xl bg-purple-500/10 text-purple-600 flex items-center justify-center">
-                  <Coins className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-foreground">Expense & Payables Control</h3>
-                  <p className="text-xs text-muted-foreground mt-1">Cash outflow tracking</p>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Categorize operating expenses (Rent, Salaries, Utilities, Supplies) and reconcile cash flow against incoming revenue.
-                </p>
-                <div className="pt-2 flex flex-wrap gap-1.5 text-[11px] text-muted-foreground font-medium">
-                  <span className="px-2 py-0.5 rounded bg-muted">8 Categories</span>
-                  <span className="px-2 py-0.5 rounded bg-muted">Vendor Receipts</span>
-                  <span className="px-2 py-0.5 rounded bg-muted">Tax Deductible</span>
-                </div>
-              </CardContent>
-            </Card>
+            <ScrollReveal delay={150}>
+              <Card className="hover:border-accent/40 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 shadow-xs h-full">
+                <CardContent className="p-6 space-y-4">
+                  <div className="h-10 w-10 rounded-xl bg-purple-500/10 text-purple-600 flex items-center justify-center">
+                    <Coins className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground">Expense & Payables Control</h3>
+                    <p className="text-xs text-muted-foreground mt-1">Cash outflow tracking</p>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Categorize operating expenses (Rent, Salaries, Utilities, Supplies) and reconcile cash flow against incoming revenue.
+                  </p>
+                  <div className="pt-2 flex flex-wrap gap-1.5 text-[11px] text-muted-foreground font-medium">
+                    <span className="px-2 py-0.5 rounded bg-muted">8 Categories</span>
+                    <span className="px-2 py-0.5 rounded bg-muted">Vendor Receipts</span>
+                    <span className="px-2 py-0.5 rounded bg-muted">Tax Deductible</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
 
             {/* Feature 4 - CRM */}
-            <Card className="hover:border-primary/50 transition-all shadow-xs">
-              <CardContent className="p-6 space-y-4">
-                <div className="h-10 w-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center">
-                  <Users className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-foreground">Customer & Vendor CRM</h3>
-                  <p className="text-xs text-muted-foreground mt-1">Credit limits & histories</p>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Maintain complete client directories, monitor outstanding accounts receivable, track supplier credit, and view transaction history.
-                </p>
-                <div className="pt-2 flex flex-wrap gap-1.5 text-[11px] text-muted-foreground font-medium">
-                  <span className="px-2 py-0.5 rounded bg-muted">Receivables Aging</span>
-                  <span className="px-2 py-0.5 rounded bg-muted">Credit Balance</span>
-                  <span className="px-2 py-0.5 rounded bg-muted">Order Timelines</span>
-                </div>
-              </CardContent>
-            </Card>
+            <ScrollReveal delay={200}>
+              <Card className="hover:border-accent/40 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 shadow-xs h-full">
+                <CardContent className="p-6 space-y-4">
+                  <div className="h-10 w-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center">
+                    <Users className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground">Customer & Vendor CRM</h3>
+                    <p className="text-xs text-muted-foreground mt-1">Credit limits & histories</p>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Maintain complete client directories, monitor outstanding accounts receivable, track supplier credit, and view transaction history.
+                  </p>
+                  <div className="pt-2 flex flex-wrap gap-1.5 text-[11px] text-muted-foreground font-medium">
+                    <span className="px-2 py-0.5 rounded bg-muted">Receivables Aging</span>
+                    <span className="px-2 py-0.5 rounded bg-muted">Credit Balance</span>
+                    <span className="px-2 py-0.5 rounded bg-muted">Order Timelines</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
 
             {/* Feature 5 - Reports */}
-            <Card className="hover:border-primary/50 transition-all shadow-xs">
-              <CardContent className="p-6 space-y-4">
-                <div className="h-10 w-10 rounded-xl bg-rose-500/10 text-rose-600 flex items-center justify-center">
-                  <BarChart3 className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-foreground">Executive Financial Reports</h3>
-                  <p className="text-xs text-muted-foreground mt-1">P&L and analytics</p>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Generate instant Profit & Loss statements, Cash Flow summaries, Sales analytics, and Tax reports across custom date ranges.
-                </p>
-                <div className="pt-2 flex flex-wrap gap-1.5 text-[11px] text-muted-foreground font-medium">
-                  <span className="px-2 py-0.5 rounded bg-muted">Profit & Loss</span>
-                  <span className="px-2 py-0.5 rounded bg-muted">Cash Flow</span>
-                  <span className="px-2 py-0.5 rounded bg-muted">CSV Export</span>
-                </div>
-              </CardContent>
-            </Card>
+            <ScrollReveal delay={250}>
+              <Card className="hover:border-accent/40 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 shadow-xs h-full">
+                <CardContent className="p-6 space-y-4">
+                  <div className="h-10 w-10 rounded-xl bg-rose-500/10 text-rose-600 flex items-center justify-center">
+                    <BarChart3 className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground">Executive Financial Reports</h3>
+                    <p className="text-xs text-muted-foreground mt-1">P&L and analytics</p>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Generate instant Profit & Loss statements, Cash Flow summaries, Sales analytics, and Tax reports across custom date ranges.
+                  </p>
+                  <div className="pt-2 flex flex-wrap gap-1.5 text-[11px] text-muted-foreground font-medium">
+                    <span className="px-2 py-0.5 rounded bg-muted">Profit & Loss</span>
+                    <span className="px-2 py-0.5 rounded bg-muted">Cash Flow</span>
+                    <span className="px-2 py-0.5 rounded bg-muted">CSV Export</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
 
             {/* Feature 6 - RBAC */}
-            <Card className="hover:border-primary/50 transition-all shadow-xs">
-              <CardContent className="p-6 space-y-4">
-                <div className="h-10 w-10 rounded-xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center">
-                  <Lock className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-foreground">Role-Based Access (RBAC)</h3>
-                  <p className="text-xs text-muted-foreground mt-1">Staff security & permissions</p>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Secure staff workflows with 5 predefined roles (Owner, Manager, Accountant, Cashier). Granular permission matrix for every screen.
-                </p>
-                <div className="pt-2 flex flex-wrap gap-1.5 text-[11px] text-muted-foreground font-medium">
-                  <span className="px-2 py-0.5 rounded bg-muted">Owner</span>
-                  <span className="px-2 py-0.5 rounded bg-muted">Manager</span>
-                  <span className="px-2 py-0.5 rounded bg-muted">Accountant</span>
-                  <span className="px-2 py-0.5 rounded bg-muted">Cashier</span>
-                </div>
-              </CardContent>
-            </Card>
+            <ScrollReveal delay={300}>
+              <Card className="hover:border-accent/40 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 shadow-xs h-full">
+                <CardContent className="p-6 space-y-4">
+                  <div className="h-10 w-10 rounded-xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center">
+                    <Lock className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground">Role-Based Access (RBAC)</h3>
+                    <p className="text-xs text-muted-foreground mt-1">Staff security & permissions</p>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Secure staff workflows with 5 predefined roles (Owner, Manager, Accountant, Cashier). Granular permission matrix for every screen.
+                  </p>
+                  <div className="pt-2 flex flex-wrap gap-1.5 text-[11px] text-muted-foreground font-medium">
+                    <span className="px-2 py-0.5 rounded bg-muted">Owner</span>
+                    <span className="px-2 py-0.5 rounded bg-muted">Manager</span>
+                    <span className="px-2 py-0.5 rounded bg-muted">Accountant</span>
+                    <span className="px-2 py-0.5 rounded bg-muted">Cashier</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
           </div>
 
           <div className="mt-12 text-center">
             <Link to="/features">
-              <Button variant="outline" className="gap-2">
+              <Button variant="outline" className="gap-2 hover:border-accent/40 hover:bg-accent/5">
                 Explore All Feature Specifications
                 <ChevronRight className="h-4 w-4" />
               </Button>
@@ -448,57 +491,34 @@ export const LandingPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                quote:
-                  'NAVIX allowed us to completely replace three disconnected spreadsheets. The real-time low-stock alerts alone saved us tens of thousands in lost sales.',
-                author: 'Tariq Al-Mansoor',
-                role: 'Managing Director, Al-Mansoor Retail Group',
-                industry: 'Retail & Distribution (5 Branches)',
-                metric: 'Cut daily audit time by 75%',
-              },
-              {
-                quote:
-                  'Having a system customized specifically for our service business without paying enterprise ERP fees changed our cash flow overnight. Highly recommended.',
-                author: 'Elena Rostova',
-                role: 'Founder & CEO, Horizon Engineering Services',
-                industry: 'Consulting & Technical Services',
-                metric: 'Saved $14,000/yr in SaaS seats',
-              },
-              {
-                quote:
-                  'The role-based cashier layout made training new staff take less than 15 minutes. It is fast, clean, and our daily reconciliation is finally stress-free.',
-                author: 'Marcus Vance',
-                role: 'Operations Lead, Urban Pulse Logistics',
-                industry: 'Logistics & Warehousing',
-                metric: '100% offline warehouse uptime',
-              },
-            ].map((t, idx) => (
-              <Card key={idx} className="bg-card flex flex-col justify-between">
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-1 text-amber-500">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-3.5 w-3.5 fill-amber-500" />
-                      ))}
+            {testimonials.map((t, idx) => (
+              <ScrollReveal key={idx} delay={idx * 100}>
+                <Card className="bg-card flex flex-col justify-between hover:border-accent/40 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 h-full">
+                  <CardContent className="p-6 space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-1 text-amber-500">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-3.5 w-3.5 fill-amber-500" />
+                        ))}
+                      </div>
+                      <span className="text-[10px] font-bold text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded-full">
+                        {t.metric}
+                      </span>
                     </div>
-                    <span className="text-[10px] font-bold text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded-full">
-                      {t.metric}
-                    </span>
-                  </div>
-                  <Quote className="h-6 w-6 text-primary/20" />
-                  <p className="text-sm text-muted-foreground leading-relaxed italic">
-                    "{t.quote}"
-                  </p>
-                  <div className="pt-3 border-t border-border">
-                    <p className="text-sm font-bold text-foreground">{t.author}</p>
-                    <p className="text-xs text-muted-foreground">{t.role}</p>
-                    <span className="inline-block mt-1 text-[10px] text-primary font-semibold">
-                      {t.industry}
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
+                    <Quote className="h-6 w-6 text-primary/20" />
+                    <p className="text-sm text-muted-foreground leading-relaxed italic">
+                      "{t.quote}"
+                    </p>
+                    <div className="pt-3 border-t border-border">
+                      <p className="text-sm font-bold text-foreground">{t.author}</p>
+                      <p className="text-xs text-muted-foreground">{t.role}</p>
+                      <span className="inline-block mt-1 text-[10px] text-primary font-semibold">
+                        {t.industry}
+                      </span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
             ))}
           </div>
         </div>

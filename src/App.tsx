@@ -37,11 +37,15 @@ import { NewSupplierPage } from '@/pages/demo/NewSupplierPage';
 import { SupplierDetailPage } from '@/pages/demo/SupplierDetailPage';
 import { DemoModulePlaceholder } from '@/pages/demo/DemoModulePlaceholder';
 import { DemoDataProvider } from '@/context/DemoDataContext';
+import { ScrollToTop } from '@/components/common/ScrollToTop';
+import { TeleportOverlay } from '@/components/common/TeleportOverlay';
 
 export const App: React.FC = () => {
   return (
     <AuthProvider>
       <BrowserRouter>
+        <ScrollToTop />
+        <TeleportOverlay />
         <Routes>
           {/* Marketing Portal Routes */}
           <Route element={<MarketingLayout />}>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { TopBar } from './TopBar';
 import { useDemoData } from '@/context/DemoDataContext';
@@ -9,6 +9,7 @@ interface AppShellProps {
 }
 
 export const AppShell: React.FC<AppShellProps> = ({ onResetDemoData }) => {
+  const location = useLocation();
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { resetAllData } = useDemoData();
@@ -35,7 +36,7 @@ export const AppShell: React.FC<AppShellProps> = ({ onResetDemoData }) => {
         />
 
         {/* Scrollable Viewport Content */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 bg-muted/10">
+        <main key={location.pathname} className="flex-1 p-4 sm:p-6 lg:p-8 bg-muted/10 animate-teleport-in">
           <Outlet />
         </main>
       </div>

@@ -224,7 +224,7 @@ export const CustomSoftwarePage: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <a
-                href={`https://wa.me/1234567890?text=${encodeURIComponent(
+                href={`https://wa.me/201108710742?text=${encodeURIComponent(
                   `Hello NAVIX team! I just submitted custom software specification for ${submittedData.businessName}.`
                 )}`}
                 target="_blank"

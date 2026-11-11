@@ -153,7 +153,10 @@ export const FAQPage: React.FC = () => {
             return (
               <div
                 key={index}
-                className="rounded-xl border border-border bg-card overflow-hidden transition-all duration-200"
+                className={cn(
+                  'rounded-xl border border-border bg-card overflow-hidden transition-all duration-300',
+                  isOpen ? 'border-accent/40 shadow-md shadow-emerald-500/5' : 'hover:border-accent/30'
+                )}
               >
                 <button
                   onClick={() => toggleIndex(index)}

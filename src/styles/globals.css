@@ -69,6 +69,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   * {
     @apply border-border;
   }
@@ -76,6 +79,99 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent) / 0.6);
+}
+
+/* Teleportation Page Animations */
+@keyframes teleportWarpIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.975) translateY(6px);
+    filter: blur(5px) brightness(1.2);
+  }
+  50% {
+    opacity: 0.85;
+    filter: blur(1px) brightness(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0) brightness(1);
+  }
+}
+
+@keyframes teleportBeam {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes teleportPortalPulse {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.9;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes subtleGlowPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(46, 139, 112, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(46, 139, 112, 0.45);
+  }
+}
+
+.animate-teleport-in {
+  animation: teleportWarpIn 0.42s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: subtleGlowPulse 3s ease-in-out infinite;
 }
 
 @media print {
