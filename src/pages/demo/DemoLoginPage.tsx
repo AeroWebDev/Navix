@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import {
-  ShieldCheck,
   Lock,
   Mail,
   ArrowRight,
@@ -10,6 +9,7 @@ import {
   KeyRound,
   AlertCircle,
 } from 'lucide-react';
+import { NavixLogo } from '@/components/common/NavixLogo';
 import { useAuth, DEMO_ACCOUNTS } from '@/context/AuthContext';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
@@ -47,11 +47,8 @@ export const DemoLoginPage: React.FC = () => {
     <div className="min-h-screen flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/5 via-background to-background">
       {/* Brand header */}
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center space-y-3">
-        <Link to="/" className="inline-flex items-center gap-2.5">
-          <div className="h-10 w-10 rounded-xl bg-primary flex items-center justify-center text-primary-foreground shadow-md">
-            <ShieldCheck className="h-6 w-6" />
-          </div>
-          <span className="text-2xl font-extrabold tracking-tight text-foreground">NAVIX</span>
+        <Link to="/" className="inline-flex items-center justify-center">
+          <NavixLogo size="lg" />
         </Link>
 
         <div>

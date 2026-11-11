@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ShieldCheck, Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { NavixLogo } from '@/components/common/NavixLogo';
 import { cn } from '@/utils/cn';
 
 export const Navbar: React.FC = () => {
@@ -22,15 +23,8 @@ export const Navbar: React.FC = () => {
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="max-w-7xl mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand */}
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="h-9 w-9 rounded-lg bg-primary flex items-center justify-center text-primary-foreground shadow-sm group-hover:scale-105 transition-transform">
-            <ShieldCheck className="h-5 w-5" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xl font-extrabold tracking-tight text-foreground">
-              NAVIX
-            </span>
-          </div>
+        <Link to="/" className="flex items-center group">
+          <NavixLogo size="md" />
         </Link>
 
         {/* Desktop Nav Links */}

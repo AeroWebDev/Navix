@@ -9,7 +9,6 @@ import {
   CheckCircle2,
   Lock,
   ArrowRight,
-  ShieldCheck,
   ChevronRight,
   Star,
   Quote,
@@ -34,11 +33,6 @@ export const LandingPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left Column: Headlines & CTA */}
             <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-xs font-semibold text-accent">
-                <ShieldCheck className="h-3.5 w-3.5" />
-                <span>Modern ERP & Commercial Accounting Platform</span>
-              </div>
-
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.12]">
                 Complete Accounting Software Built Around Your Business
               </h1>
@@ -56,7 +50,7 @@ export const LandingPage: React.FC = () => {
                   </Button>
                 </Link>
                 <Link to="/custom-software" className="w-full sm:w-auto">
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2 text-base px-8 py-6 bg-card hover:bg-accent/10">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2 text-base px-8 py-6 bg-background text-foreground border-border hover:bg-muted">
                     Request Your Software
                   </Button>
                 </Link>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Mail, MessageSquare, Phone, MapPin, ExternalLink } from 'lucide-react';
+import { Mail, MessageSquare, Phone, MapPin, ExternalLink } from 'lucide-react';
+import { NavixLogo } from '@/components/common/NavixLogo';
 
 export const Footer: React.FC = () => {
   return (
@@ -9,13 +10,8 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <Link to="/" className="flex items-center gap-2.5">
-              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground">
-                <ShieldCheck className="h-5 w-5" />
-              </div>
-              <span className="text-xl font-extrabold tracking-tight text-foreground">
-                NAVIX
-              </span>
+            <Link to="/" className="flex items-center">
+              <NavixLogo size="md" />
             </Link>
             <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
               Commercial-grade accounting and business management system showcase. Built to be customized, deployed, and scaled for enterprises, retail chains, and service companies.
@@ -101,21 +97,23 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary shrink-0" />
-                <a href="mailto:solutions@navix.demo" className="hover:text-primary truncate">
-                  solutions@navix.demo
+                <a href="mailto:aeroteam.agency@gmail.com" className="hover:text-primary truncate">
+                  aeroteam.agency@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <MessageSquare className="h-4 w-4 text-emerald-600 shrink-0" />
-                <span className="truncate">WhatsApp Consultation</span>
+                <a href="https://wa.me/201108710742" target="_blank" rel="noopener noreferrer" className="hover:text-primary truncate">
+                  +20 110 871 0742
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary shrink-0" />
-                <span>+1 (800) 555-0199</span>
+                <span>+20 110 871 0742</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-primary shrink-0" />
-                <span>Global Deployment Ready</span>
+                <span>Cairo, Egypt</span>
               </li>
             </ul>
 
@@ -137,7 +135,21 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} NAVIX Solutions. All rights reserved.</p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <p>© {new Date().getFullYear()} NAVIX Solutions. All rights reserved.</p>
+            <span className="hidden sm:inline text-border">·</span>
+            <p>
+              Made by{' '}
+              <a
+                href="https://aeroteam.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary hover:underline"
+              >
+                Aero Team
+              </a>
+            </p>
+          </div>
           <div className="flex items-center gap-6">
             <Link to="/privacy" className="hover:text-foreground">
               Privacy

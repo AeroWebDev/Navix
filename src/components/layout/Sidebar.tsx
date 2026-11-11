@@ -15,11 +15,11 @@ import {
   BarChart4,
   Scale,
   Settings,
-  ShieldCheck,
   ChevronLeft,
   ChevronRight,
   Lock,
 } from 'lucide-react';
+import { NavixLogo } from '@/components/common/NavixLogo';
 import { useAuth } from '@/context/AuthContext';
 import { Permission } from '@/types/auth';
 import { Badge } from '@/components/ui/Badge';
@@ -158,20 +158,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <Link
             to="/demo/dashboard"
             onClick={onCloseMobile}
-            className={cn('flex items-center gap-2.5 overflow-hidden group', isCollapsed && 'justify-center')}
+            className={cn('flex items-center overflow-hidden group', isCollapsed ? 'justify-center w-full' : 'gap-2')}
           >
-            <div className="h-10 w-10 rounded-2xl bg-accent flex items-center justify-center text-white shadow-sm shrink-0 group-hover:scale-105 transition-transform">
-              <ShieldCheck className="h-5 w-5" />
-            </div>
-            {!isCollapsed && (
-              <div className="flex flex-col">
-                <span className="text-base font-extrabold tracking-tight text-foreground truncate">
-                  NAVIX
-                </span>
-                <span className="text-[10px] text-muted-foreground uppercase font-bold tracking-wider">
-                  Enterprise ERP
-                </span>
-              </div>
+            {isCollapsed ? (
+              <NavixLogo variant="icon" size="sm" className="group-hover:scale-105 transition-transform" />
+            ) : (
+              <NavixLogo size="md" subtext="Enterprise ERP" className="group-hover:scale-105 transition-transform" />
             )}
           </Link>
 

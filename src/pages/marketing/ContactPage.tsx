@@ -78,7 +78,7 @@ export const ContactPage: React.FC = () => {
                 <div className="space-y-4">
                   {/* WhatsApp Quick Chat */}
                   <a
-                    href="https://wa.me/1234567890?text=Hello%20NAVIX%2C%20I%20am%20interested%20in%20a%20custom%20accounting%20system."
+                    href="https://wa.me/201108710742?text=Hello%20NAVIX%2C%20I%20am%20interested%20in%20a%20custom%20accounting%20system."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-between p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-500/20 transition-colors group cursor-pointer"
@@ -89,7 +89,7 @@ export const ContactPage: React.FC = () => {
                       </div>
                       <div>
                         <p className="text-sm font-bold">WhatsApp Direct Consultation</p>
-                        <p className="text-xs opacity-90">+1 (234) 567-890</p>
+                        <p className="text-xs opacity-90">+20 110 871 0742</p>
                       </div>
                     </div>
                     <ExternalLink className="h-4 w-4 opacity-70 group-hover:opacity-100" />
@@ -103,10 +103,10 @@ export const ContactPage: React.FC = () => {
                     <div>
                       <p className="text-xs font-semibold uppercase text-muted-foreground">Email</p>
                       <a
-                        href="mailto:solutions@navix.demo"
+                        href="mailto:aeroteam.agency@gmail.com"
                         className="text-sm font-bold text-foreground hover:text-primary transition-colors"
                       >
-                        solutions@navix.demo
+                        aeroteam.agency@gmail.com
                       </a>
                     </div>
                   </div>
@@ -118,8 +118,8 @@ export const ContactPage: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-xs font-semibold uppercase text-muted-foreground">Telephone</p>
-                      <p className="text-sm font-bold text-foreground">+1 (800) 555-0199</p>
-                      <p className="text-[11px] text-muted-foreground">Mon–Fri: 9:00 AM – 6:00 PM (EST)</p>
+                      <p className="text-sm font-bold text-foreground">+20 110 871 0742</p>
+                      <p className="text-[11px] text-muted-foreground">Sun–Thu: 9:00 AM – 6:00 PM (EET)</p>
                     </div>
                   </div>
 
@@ -130,8 +130,8 @@ export const ContactPage: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-xs font-semibold uppercase text-muted-foreground">Headquarters & Operations</p>
-                      <p className="text-sm font-bold text-foreground">NAVIX Solutions</p>
-                      <p className="text-xs text-muted-foreground">Global Remote & On-Premises Engineering</p>
+                      <p className="text-sm font-bold text-foreground">Aero Team</p>
+                      <p className="text-xs text-muted-foreground">Cairo, Egypt</p>
                     </div>
                   </div>
                 </div>
