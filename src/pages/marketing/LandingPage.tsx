@@ -527,7 +527,7 @@ export const LandingPage: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto border-emerald-400 text-white hover:bg-white/10 px-8 py-6 font-bold"
+                className="w-full sm:w-auto border-2 border-white text-white bg-transparent hover:bg-white hover:text-emerald-900 px-8 py-6 font-bold transition-colors"
               >
                 Request Custom Software Quote
               </Button>
