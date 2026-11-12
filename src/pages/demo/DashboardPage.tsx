@@ -13,6 +13,7 @@ import {
   CreditCard,
 } from 'lucide-react';
 import { useDemoData } from '@/context/DemoDataContext';
+import { useAuth } from '@/context/AuthContext';
 import { StatCard } from '@/components/common/StatCard';
 import { RevenueChart, MonthlyFinancialData } from '@/components/charts/RevenueChart';
 import { ExpensePieChart, ExpenseCategoryData } from '@/components/charts/ExpensePieChart';
@@ -20,10 +21,12 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { formatCurrency, formatDate } from '@/utils/formatters';
+import { BankLiquidityCard } from '@/components/dashboard/BankLiquidityCard';
 import { ProductStatisticsCard } from '@/components/dashboard/ProductStatisticsCard';
-import { CustomerGrowthCard } from '@/components/dashboard/CustomerGrowthCard';
+import { ReceivablesAgingCard } from '@/components/dashboard/ReceivablesAgingCard';
 
 export const DashboardPage: React.FC = () => {
+  const { user } = useAuth();
   const { sales, expenses, invoices, products, customers, suppliers } = useDemoData();
 
   // Financial aggregates
@@ -109,7 +112,7 @@ export const DashboardPage: React.FC = () => {
             </span>
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
-            Welcome back, Alexander — Real-time balance sheet metrics, operating cash flow, and live inventory status.
+            Welcome back, {user?.name || 'Alexander'} — Real-time balance sheet metrics, operating cash flow, and live inventory status.
           </p>
         </div>
 
@@ -312,49 +315,16 @@ export const DashboardPage: React.FC = () => {
           </Card>
         </div>
 
-        {/* Right Column (4 cols) - Inspired by Reference Assets */}
+        {/* Right Column (4 cols) */}
         <div className="lg:col-span-4 space-y-6">
-          {/* Corporate Treasury VISA Card */}
-          <div className="flex flex-col justify-between p-6 rounded-3xl bg-gradient-to-br from-[#172A3A] via-[#1F3A4D] to-[#2E8B70] text-white shadow-soft-island relative overflow-hidden">
-            <div className="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-white/5 blur-2xl pointer-events-none" />
+          {/* Real Commercial Bank & Cash Liquidity Card */}
+          <BankLiquidityCard />
 
-            <div>
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-extrabold tracking-widest text-white/90">VISA</span>
-                <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-white/10 text-white/90 backdrop-blur-sm">
-                  Corporate Treasury
-                </span>
-              </div>
-              <p className="text-xs text-white/70 mt-4 font-medium">Available Working Capital</p>
-              <p className="text-3xl font-extrabold tracking-tight mt-1">
-                $78,989.09
-              </p>
-            </div>
-
-            <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-white/80">
-              <div className="font-mono tracking-wider">•••• 9090</div>
-              <div className="text-[11px] font-medium">EXP 09/28</div>
-            </div>
-
-            <div className="mt-4 flex items-center gap-2">
-              <Link to="/demo/sales" className="flex-1">
-                <button className="w-full py-2 px-3 rounded-full bg-white text-[#172A3A] text-xs font-bold hover:bg-white/90 transition-all cursor-pointer shadow-xs">
-                  Send Inflow ↑
-                </button>
-              </Link>
-              <Link to="/demo/expenses" className="flex-1">
-                <button className="w-full py-2 px-3 rounded-full bg-white/15 text-white text-xs font-bold hover:bg-white/25 transition-all cursor-pointer">
-                  Disburse ↓
-                </button>
-              </Link>
-            </div>
-          </div>
-
-          {/* Product Statistics Card with Concentric Radial Rings */}
+          {/* Real Product Inventory Valuation & Category Breakdown */}
           <ProductStatisticsCard />
 
-          {/* Customer Growth Card with Locations */}
-          <CustomerGrowthCard />
+          {/* Real A/R Aging & Customer Balances */}
+          <ReceivablesAgingCard />
 
           {/* Recent Invoices Mini Table */}
           <Card className="rounded-3xl shadow-soft-island border-border/60 overflow-hidden">

@@ -1,171 +1,126 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { Laptop, Gamepad2, Armchair, ChevronDown } from 'lucide-react';
-
-interface CategoryStat {
-  name: string;
-  count: number;
-  change: string;
-  isPositive: boolean;
-  color: string;
-  icon: React.ReactNode;
-}
+import { useDemoData } from '@/context/DemoDataContext';
+import { formatCurrency } from '@/utils/formatters';
+import { PackageCheck, AlertTriangle } from 'lucide-react';
 
 export const ProductStatisticsCard: React.FC = () => {
-  const categories: CategoryStat[] = [
-    {
-      name: 'Electronic',
-      count: 2487,
-      change: '+1.8%',
-      isPositive: true,
-      color: '#3B82F6', // Blue
-      icon: <Laptop className="h-4 w-4" />,
-    },
-    {
-      name: 'Games',
-      count: 1828,
-      change: '+2.3%',
-      isPositive: true,
-      color: '#10B981', // Emerald
-      icon: <Gamepad2 className="h-4 w-4" />,
-    },
-    {
-      name: 'Furniture',
-      count: 1463,
-      change: '-1.04%',
-      isPositive: false,
-      color: '#EF4444', // Red
-      icon: <Armchair className="h-4 w-4" />,
-    },
-  ];
+  const { products } = useDemoData();
+
+  const { totalUnits, totalValuation, categoryBreakdown, inStockCount, lowStockCount } = useMemo(() => {
+    let units = 0;
+    let valuation = 0;
+    let inStock = 0;
+    let lowStock = 0;
+
+    const catMap: Record<string, { count: number; units: number; value: number }> = {};
+
+    products.forEach((p) => {
+      units += p.stockQuantity;
+      valuation += p.stockQuantity * p.costPrice;
+      if (p.stockQuantity <= p.minStockLevel) {
+        lowStock += 1;
+      } else {
+        inStock += 1;
+      }
+
+      if (!catMap[p.category]) {
+        catMap[p.category] = { count: 0, units: 0, value: 0 };
+      }
+      catMap[p.category].count += 1;
+      catMap[p.category].units += p.stockQuantity;
+      catMap[p.category].value += p.stockQuantity * p.costPrice;
+    });
+
+    const breakdown = Object.entries(catMap)
+      .map(([name, stat]) => ({
+        name,
+        count: stat.count,
+        units: stat.units,
+        value: stat.value,
+      }))
+      .sort((a, b) => b.value - a.value)
+      .slice(0, 4);
+
+    return {
+      totalUnits: units,
+      totalValuation: valuation,
+      categoryBreakdown: breakdown,
+      inStockCount: inStock,
+      lowStockCount: lowStock,
+    };
+  }, [products]);
+
+  const colorPalette = ['#3B82F6', '#10B981', '#8B5CF6', '#F59E0B'];
 
   return (
     <Card className="rounded-3xl border-border/60 shadow-soft-island bg-card flex flex-col justify-between">
       <CardHeader className="flex flex-row items-start justify-between pb-2 border-b border-border/40">
         <div>
           <CardTitle className="text-base font-bold text-foreground">
-            Product Statistic
+            Inventory Valuation & Stock
           </CardTitle>
-          <p className="text-xs text-muted-foreground mt-0.5">Track your product sales</p>
+          <p className="text-xs text-muted-foreground mt-0.5">
+            Real-time warehouse asset distribution
+          </p>
         </div>
-        <button className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted/60 text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors">
-          Today
-          <ChevronDown className="h-3 w-3" />
-        </button>
+        <span className="px-2.5 py-1 rounded-full bg-muted/60 text-xs font-semibold text-muted-foreground">
+          {products.length} Active SKUs
+        </span>
       </CardHeader>
 
-      <CardContent className="pt-4 space-y-5">
-        {/* Circular Concentric Rings Gauge Inspired by Reference Asset */}
-        <div className="flex items-center justify-center gap-6 py-2">
-          <div className="relative w-36 h-36 flex items-center justify-center">
-            <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
-              {/* Outer Blue Track & Ring */}
-              <circle
-                cx="60"
-                cy="60"
-                r="50"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="7"
-                className="text-muted/30"
-              />
-              <circle
-                cx="60"
-                cy="60"
-                r="50"
-                fill="none"
-                stroke="#3B82F6"
-                strokeWidth="7"
-                strokeDasharray="314"
-                strokeDashoffset="85"
-                strokeLinecap="round"
-                className="transition-all duration-1000 ease-out"
-              />
-
-              {/* Middle Emerald Track & Ring */}
-              <circle
-                cx="60"
-                cy="60"
-                r="38"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="7"
-                className="text-muted/30"
-              />
-              <circle
-                cx="60"
-                cy="60"
-                r="38"
-                fill="none"
-                stroke="#10B981"
-                strokeWidth="7"
-                strokeDasharray="238"
-                strokeDashoffset="90"
-                strokeLinecap="round"
-                className="transition-all duration-1000 ease-out"
-              />
-
-              {/* Inner Coral Track & Ring */}
-              <circle
-                cx="60"
-                cy="60"
-                r="26"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="7"
-                className="text-muted/30"
-              />
-              <circle
-                cx="60"
-                cy="60"
-                r="26"
-                fill="none"
-                stroke="#EF4444"
-                strokeWidth="7"
-                strokeDasharray="163"
-                strokeDashoffset="70"
-                strokeLinecap="round"
-                className="transition-all duration-1000 ease-out"
-              />
-            </svg>
-
-            {/* Central KPI Label */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-              <span className="text-xl font-extrabold text-foreground tracking-tight">9.829</span>
-              <span className="text-[10px] text-muted-foreground font-semibold">Products Sales</span>
-              <span className="mt-0.5 px-2 py-0.2 rounded-full bg-emerald-500/10 text-emerald-600 text-[9px] font-bold">
-                +5.34%
-              </span>
-            </div>
+      <CardContent className="pt-4 space-y-4">
+        {/* Metric summary header */}
+        <div className="p-4 rounded-2xl bg-muted/30 border border-border/60 flex items-center justify-between">
+          <div>
+            <p className="text-[11px] text-muted-foreground font-semibold">Total Stock Valuation</p>
+            <p className="text-xl font-extrabold text-foreground tracking-tight">
+              {formatCurrency(totalValuation)}
+            </p>
+            <p className="text-[10px] text-muted-foreground mt-0.5">
+              {totalUnits} physical units counted
+            </p>
+          </div>
+          <div className="text-right space-y-1">
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-600">
+              <PackageCheck className="h-3 w-3" />
+              {inStockCount} In Stock
+            </span>
+            {lowStockCount > 0 && (
+              <div>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/10 text-amber-600">
+                  <AlertTriangle className="h-3 w-3" />
+                  {lowStockCount} Low Reorder
+                </span>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Breakdown Items List */}
-        <div className="space-y-3 pt-2 border-t border-border/50">
-          {categories.map((cat, idx) => (
-            <div key={idx} className="flex items-center justify-between text-xs">
-              <div className="flex items-center gap-2.5">
-                <div
-                  className="h-8 w-8 rounded-xl flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: `${cat.color}15`, color: cat.color }}
-                >
-                  {cat.icon}
-                </div>
+        {/* Real Category Breakdown List */}
+        <div className="space-y-2.5 text-xs">
+          <p className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+            Top Categories by Asset Value:
+          </p>
+          {categoryBreakdown.map((cat, idx) => (
+            <div key={idx} className="flex items-center justify-between p-2 rounded-xl hover:bg-muted/30 transition-colors">
+              <div className="flex items-center gap-2">
+                <span
+                  className="h-2.5 w-2.5 rounded-full shrink-0"
+                  style={{ backgroundColor: colorPalette[idx % colorPalette.length] }}
+                />
                 <span className="font-semibold text-foreground">{cat.name}</span>
+                <span className="text-[11px] text-muted-foreground font-mono">
+                  ({cat.count} SKUs)
+                </span>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="text-right">
                 <span className="font-bold text-foreground font-mono">
-                  {cat.count.toLocaleString()}
+                  {formatCurrency(cat.value)}
                 </span>
-                <span
-                  className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                    cat.isPositive
-                      ? 'bg-emerald-500/10 text-emerald-600'
-                      : 'bg-rose-500/10 text-rose-600'
-                  }`}
-                >
-                  {cat.change}
+                <span className="block text-[10px] text-muted-foreground font-mono">
+                  {cat.units} units
                 </span>
               </div>
             </div>
