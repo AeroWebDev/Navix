@@ -211,18 +211,18 @@
 
 ## Phase 8: Expenses Module
 
-- [ ] Implement `ExpensesListPage.tsx` table — done when all mock expenses render
-- [ ] Implement expenses search by title — done when search filters results
-- [ ] Implement expenses filter by category and status — done when filters apply correctly
-- [ ] Implement expenses filter by date range — done when filter applies correctly
-- [ ] Implement category totals summary (total per category shown above or below table) — done when totals are accurate
-- [ ] Implement `NewExpensePage.tsx` with `ExpenseForm.tsx` and Zod validation — done when form validates and submits
-- [ ] Implement edit expense (pre-fill form) and delete expense with confirmation — done when changes and deletions reflect in list
-- [ ] Verify `DashboardPage` expense pie chart reflects current context data — done when adding an expense updates the chart
-- [ ] Write test: `ExpensesListPage` renders all mock expenses — done when test passes
-- [ ] Write test: expense category filter shows only matching expenses — done when test passes
-- [ ] Write test: `ExpenseForm` validates required title and amount — done when test passes
-- [ ] Commit: `feat: add expenses module` — done when commit exists
+- [x] Implement `ExpensesListPage.tsx` table — done when all mock expenses render
+- [x] Implement expenses search by title — done when search filters results
+- [x] Implement expenses filter by category and status — done when filters apply correctly
+- [x] Implement expenses filter by date range — done when filter applies correctly
+- [x] Implement category totals summary (total per category shown above or below table) — done when totals are accurate
+- [x] Implement `NewExpensePage.tsx` with `ExpenseForm.tsx` and Zod validation — done when form validates and submits
+- [x] Implement edit expense (pre-fill form) and delete expense with confirmation — done when changes and deletions reflect in list
+- [x] Verify `DashboardPage` expense pie chart reflects current context data — done when adding an expense updates the chart
+- [x] Write test: `ExpensesListPage` renders all mock expenses — done when test passes
+- [x] Write test: expense category filter shows only matching expenses — done when test passes
+- [x] Write test: `ExpenseForm` validates required title and amount — done when test passes
+- [x] Commit: `feat: add expenses module` — done when commit exists
 
 ---
 

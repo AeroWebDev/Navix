@@ -35,6 +35,9 @@ import { CustomerDetailPage } from '@/pages/demo/CustomerDetailPage';
 import { SuppliersListPage } from '@/pages/demo/SuppliersListPage';
 import { NewSupplierPage } from '@/pages/demo/NewSupplierPage';
 import { SupplierDetailPage } from '@/pages/demo/SupplierDetailPage';
+import { ExpensesListPage } from '@/pages/demo/ExpensesListPage';
+import { NewExpensePage } from '@/pages/demo/NewExpensePage';
+import { ExpenseDetailPage } from '@/pages/demo/ExpenseDetailPage';
 import { DemoModulePlaceholder } from '@/pages/demo/DemoModulePlaceholder';
 import { DemoDataProvider } from '@/context/DemoDataContext';
 import { ScrollToTop } from '@/components/common/ScrollToTop';
@@ -272,16 +275,31 @@ export const App: React.FC = () => {
               path="/demo/expenses"
               element={
                 <ProtectedRoute requiredPermission="expenses">
-                  <DemoModulePlaceholder
-                    title="Expense Management"
-                    moduleKey="Cash Outflow"
-                    description="Log and categorize operating expenses, petty cash, and overhead costs."
-                    features={[
-                      '8 Standard expense categories (Rent, Salaries, Utilities, etc.)',
-                      'Payment method and receipt tracking',
-                      'Tax-deductible expense indicators',
-                    ]}
-                  />
+                  <ExpensesListPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/expenses/new"
+              element={
+                <ProtectedRoute requiredPermission="expenses">
+                  <NewExpensePage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/expenses/:id"
+              element={
+                <ProtectedRoute requiredPermission="expenses">
+                  <ExpenseDetailPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/expenses/:id/edit"
+              element={
+                <ProtectedRoute requiredPermission="expenses">
+                  <ExpenseDetailPage />
                 </ProtectedRoute>
               }
             />
