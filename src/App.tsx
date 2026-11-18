@@ -38,6 +38,10 @@ import { SupplierDetailPage } from '@/pages/demo/SupplierDetailPage';
 import { ExpensesListPage } from '@/pages/demo/ExpensesListPage';
 import { NewExpensePage } from '@/pages/demo/NewExpensePage';
 import { ExpenseDetailPage } from '@/pages/demo/ExpenseDetailPage';
+import { InvoicesListPage } from '@/pages/demo/InvoicesListPage';
+import { NewInvoicePage } from '@/pages/demo/NewInvoicePage';
+import { InvoiceDetailPage } from '@/pages/demo/InvoiceDetailPage';
+import { PaymentsListPage } from '@/pages/demo/PaymentsListPage';
 import { DemoModulePlaceholder } from '@/pages/demo/DemoModulePlaceholder';
 import { DemoDataProvider } from '@/context/DemoDataContext';
 import { ScrollToTop } from '@/components/common/ScrollToTop';
@@ -308,16 +312,23 @@ export const App: React.FC = () => {
               path="/demo/invoices"
               element={
                 <ProtectedRoute requiredPermission="invoices">
-                  <DemoModulePlaceholder
-                    title="Invoices & Printing"
-                    moduleKey="Billing Engine"
-                    description="Generate and preview client invoices with dedicated print layout and tax breakdown."
-                    features={[
-                      'Printable invoice layout (@media print)',
-                      'Custom discount and tax rates',
-                      'Payment status lifecycle (Draft, Pending, Paid, Overdue)',
-                    ]}
-                  />
+                  <InvoicesListPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/invoices/new"
+              element={
+                <ProtectedRoute requiredPermission="invoices">
+                  <NewInvoicePage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/demo/invoices/:id"
+              element={
+                <ProtectedRoute requiredPermission="invoices">
+                  <InvoiceDetailPage />
                 </ProtectedRoute>
               }
             />
@@ -326,16 +337,7 @@ export const App: React.FC = () => {
               path="/demo/payments"
               element={
                 <ProtectedRoute requiredPermission="payments">
-                  <DemoModulePlaceholder
-                    title="Payment Transactions"
-                    moduleKey="Inflow & Outflow"
-                    description="Reconcile payments received from customers and payments made to vendors."
-                    features={[
-                      'Inflow vs Outflow cash movements',
-                      'Payment modes (Cash, Bank, Card, Cheque)',
-                      'Linked invoice and expense references',
-                    ]}
-                  />
+                  <PaymentsListPage />
                 </ProtectedRoute>
               }
             />

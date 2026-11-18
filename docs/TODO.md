@@ -228,25 +228,25 @@
 
 ## Phase 9: Invoices & Payments
 
-- [ ] Implement `InvoicesListPage.tsx` table with color-coded status — done when all mock invoices render with correct status colors
-- [ ] Implement invoice search by invoice number or customer — done when search filters correctly
-- [ ] Implement invoice filter by status and date range — done when filters apply
-- [ ] Implement `NewInvoicePage.tsx` with `InvoiceForm.tsx` (customer, dates, line items, notes, T&C) — done when form renders and validates
-- [ ] Implement auto-calculation of invoice totals (subtotal, tax, discount, total, amount due) — done when amounts update reactively
-- [ ] On valid submit: dispatch `ADD_INVOICE`, show success toast, navigate to invoice detail — done when invoice appears in list
-- [ ] Implement `InvoiceDetailPage.tsx` in preview mode (styled as printable invoice document) — done when invoice looks like a real document
-- [ ] Implement print action on `InvoiceDetailPage` using `window.print()` with print-only CSS — done when print dialog opens with correct content
-- [ ] Implement "Record Payment" form on `InvoiceDetailPage` (amount, date, method) — done when submitting updates `amountPaid`, `amountDue`, and invoice `status` in context
-- [ ] Implement invoice status actions: mark as sent, mark as cancelled, for draft invoices only allow edit/delete — done when status transitions are enforced
-- [ ] Create `InvoicePreviewModal.tsx` — done when modal renders invoice in printable format
-- [ ] Auto-mark invoices as `overdue` when due date has passed and status is `sent` — done when overdue invoices show overdue status on page load
-- [ ] Implement `PaymentsListPage.tsx` table showing all payments — done when all mock payments render
-- [ ] Implement payment search and filter by type and method — done when filters apply
-- [ ] Write test: `InvoicesListPage` renders all mock invoices — done when test passes
-- [ ] Write test: recording a payment updates `amountPaid` and `amountDue` — done when test passes
-- [ ] Write test: overdue logic marks invoice as overdue when past due date — done when test passes
-- [ ] Write test: `InvoiceForm` validates required customer and due date — done when test passes
-- [ ] Commit: `feat: add invoices and payments module` — done when commit exists
+- [x] Implement `InvoicesListPage.tsx` table with color-coded status — done when all mock invoices render with correct status colors
+- [x] Implement invoice search by invoice number or customer — done when search filters correctly
+- [x] Implement invoice filter by status and date range — done when filters apply
+- [x] Implement `NewInvoicePage.tsx` with `InvoiceForm.tsx` (customer, dates, line items, notes, T&C) — done when form renders and validates
+- [x] Implement auto-calculation of invoice totals (subtotal, tax, discount, total, amount due) — done when amounts update reactively
+- [x] On valid submit: dispatch `ADD_INVOICE`, show success toast, navigate to invoice detail — done when invoice appears in list
+- [x] Implement `InvoiceDetailPage.tsx` in preview mode (styled as printable invoice document) — done when invoice looks like a real document
+- [x] Implement print action on `InvoiceDetailPage` using `window.print()` with print-only CSS — done when print dialog opens with correct content
+- [x] Implement "Record Payment" form on `InvoiceDetailPage` (amount, date, method) — done when submitting updates `amountPaid`, `amountDue`, and invoice `status` in context
+- [x] Implement invoice status actions: mark as sent, mark as cancelled, for draft invoices only allow edit/delete — done when status transitions are enforced
+- [x] Create `RecordPaymentModal.tsx` and printable document layout — done when modal renders and processes payment
+- [x] Auto-mark invoices as `overdue` when due date has passed and status is `sent` — done when overdue invoices show overdue status on page load
+- [x] Implement `PaymentsListPage.tsx` table showing all payments — done when all mock payments render
+- [x] Implement payment search and filter by type and method — done when filters apply
+- [x] Write test: `InvoicesListPage` renders all mock invoices — done when test passes
+- [x] Write test: recording a payment updates `amountPaid` and `amountDue` — done when test passes
+- [x] Write test: overdue logic marks invoice as overdue when past due date — done when test passes
+- [x] Write test: `InvoiceForm` validates required customer and due date — done when test passes
+- [x] Commit: `feat: add invoices and payments module` — done when commit exists
 
 ---
 

@@ -189,24 +189,24 @@
 
 | ID | Feature | Scenario | Input / Steps | Expected Result | Status |
 |---|---|---|---|---|---|
-| INV-001 | Invoices List | All mock invoices render | Navigate to `/demo/invoices` | All seeded invoices appear in the table | not run |
-| INV-002 | Invoices List | Overdue invoices are visually distinct | An invoice with passed due date and "sent" status exists | Row is highlighted in red or has an overdue badge | not run |
-| INV-003 | Invoices Search | Search by invoice number | Type "INV-2024-0001" | Only that invoice is shown | not run |
-| INV-004 | Invoices Filter | Status filter applies | Select "paid" | Only paid invoices are shown | not run |
-| INV-005 | New Invoice | Customer required validation | Submit without selecting customer | Error "Customer is required" appears | not run |
-| INV-006 | New Invoice | Due date required | Submit without a due date | Error "Due date is required" appears | not run |
-| INV-007 | New Invoice | Totals auto-calculate | Add a line item (qty=3, price=100, 10% tax) | Subtotal=\$300, tax=\$30, total=\$330 | not run |
-| INV-008 | New Invoice | Valid submit adds to list | Fill valid form and submit | Success toast; new invoice appears in list | not run |
-| INV-009 | Invoice Preview | Invoice detail renders as a document | Navigate to an invoice's detail page | Invoice number, customer info, line items, and totals are displayed in document format | not run |
-| INV-010 | Invoice Preview | Print action is triggered | Click Print / Download PDF button | `window.print()` is called | not run |
-| INV-011 | Record Payment | Partial payment updates amountPaid | Record a payment for half the invoice total | `amountPaid` increases; `amountDue` decreases by the same amount | not run |
-| INV-012 | Record Payment | Full payment marks invoice as paid | Record a payment equal to the remaining amount due | Invoice status changes to "paid" | not run |
-| INV-013 | Record Payment | Cannot overpay invoice | Try to record a payment greater than the amount due | Error or validation prevents overpayment | not run |
-| INV-014 | Invoice Status | Overdue auto-logic triggers on page load | An invoice with due date yesterday and "sent" status | Its status is shown as "overdue" in the list | not run |
-| INV-015 | Invoice Status | Draft invoice can be edited | Navigate to a draft invoice's detail | Edit button is present and enabled | not run |
-| INV-016 | Invoice Status | Non-draft invoice cannot be edited | Navigate to a "paid" invoice's detail | Edit button is absent or disabled | not run |
-| INV-017 | Payments List | All mock payments render | Navigate to `/demo/payments` | All seeded payments appear in the table | not run |
-| INV-018 | Payments Filter | Filter by type (incoming/outgoing) | Select "incoming" | Only incoming payments are shown | not run |
+| INV-001 | Invoices List | All mock invoices render | Navigate to `/demo/invoices` | All seeded invoices appear in the table | pass |
+| INV-002 | Invoices List | Overdue invoices are visually distinct | An invoice with passed due date and "sent" status exists | Row is highlighted in red or has an overdue badge | pass |
+| INV-003 | Invoices Search | Search by invoice number | Type "INV-2024-0001" | Only that invoice is shown | pass |
+| INV-004 | Invoices Filter | Status filter applies | Select "paid" | Only paid invoices are shown | pass |
+| INV-005 | New Invoice | Customer required validation | Submit without selecting customer | Error "Customer is required" appears | pass |
+| INV-006 | New Invoice | Due date required | Submit without a due date | Error "Due date is required" appears | pass |
+| INV-007 | New Invoice | Totals auto-calculate | Add a line item (qty=3, price=100, 10% tax) | Subtotal=$300, tax=$30, total=$330 | pass |
+| INV-008 | New Invoice | Valid submit adds to list | Fill valid form and submit | Success toast; new invoice appears in list | pass |
+| INV-009 | Invoice Preview | Invoice detail renders as a document | Navigate to an invoice's detail page | Invoice number, customer info, line items, and totals are displayed in document format | pass |
+| INV-010 | Invoice Preview | Print action is triggered | Click Print / Download PDF button | `window.print()` is called | pass |
+| INV-011 | Record Payment | Partial payment updates amountPaid | Record a payment for half the invoice total | `amountPaid` increases; `amountDue` decreases by the same amount | pass |
+| INV-012 | Record Payment | Full payment marks invoice as paid | Record a payment equal to the remaining amount due | Invoice status changes to "paid" | pass |
+| INV-013 | Record Payment | Cannot overpay invoice | Try to record a payment greater than the amount due | Error or validation prevents overpayment | pass |
+| INV-014 | Invoice Status | Overdue auto-logic triggers on page load | An invoice with due date yesterday and "sent" status | Its status is shown as "overdue" in the list | pass |
+| INV-015 | Invoice Status | Draft invoice can be edited | Navigate to a draft invoice's detail | Edit button is present and enabled | pass |
+| INV-016 | Invoice Status | Non-draft invoice cannot be edited | Navigate to a "paid" invoice's detail | Edit button is absent or disabled | pass |
+| INV-017 | Payments List | All mock payments render | Navigate to `/demo/payments` | All seeded payments appear in the table | pass |
+| INV-018 | Payments Filter | Filter by type (incoming/outgoing) | Select "incoming" | Only incoming payments are shown | pass |
 
 ---
 
